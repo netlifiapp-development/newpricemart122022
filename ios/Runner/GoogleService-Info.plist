@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>406948018763-b0ugf22ipgc60vlnkhsm4alrou86t3rf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.406948018763-b0ugf22ipgc60vlnkhsm4alrou86t3rf</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>406948018763-8o2vmngsko0ddrt09cmqvjldjuh9sfd3.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAPo0_BOXGYObaG-xIQC_gZEcpjGnX0nmk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>406948018763</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.shoppingapp.io</string>
+	<key>PROJECT_ID</key>
+	<string>netlifi-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>netlifi-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:406948018763:ios:86944598d827106527abce</string>
+	<key>DATABASE_URL</key>
+	<string>https://netlifi-app-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

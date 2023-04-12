@@ -1,0 +1,187 @@
+{
+  "project_info": {
+    "project_number": "406948018763",
+    "firebase_url": "https://netlifi-app-default-rtdb.firebaseio.com",
+    "project_id": "netlifi-app",
+    "storage_bucket": "netlifi-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406948018763:android:67d66aa8ccb098c627abce",
+        "android_client_info": {
+          "package_name": "com.myartassistantgraphics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406948018763-gdel9b9h7k4qvvsu9slnem87o5750esu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myartassistantgraphics",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "406948018763-2q3dl5naritj36g3ssng2p82hqmtoh4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvUg8phcdwTdIPfEq3pxwWHvcxYorWvRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406948018763-2q3dl5naritj36g3ssng2p82hqmtoh4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "406948018763-4u96a5d8m52p5rvn1v0mtol5lvbm3fmk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.socialmediaflutappnx"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406948018763:android:8b7a82cfedd5769027abce",
+        "android_client_info": {
+          "package_name": "com.pricemartgrocery.io"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406948018763-kllndromoooplrm3omnej4bekvq2esoh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pricemartgrocery.io",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "406948018763-2q3dl5naritj36g3ssng2p82hqmtoh4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvUg8phcdwTdIPfEq3pxwWHvcxYorWvRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406948018763-2q3dl5naritj36g3ssng2p82hqmtoh4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "406948018763-4u96a5d8m52p5rvn1v0mtol5lvbm3fmk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.socialmediaflutappnx"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406948018763:android:16661ae12e11977827abce",
+        "android_client_info": {
+          "package_name": "com.shoppingapp.io"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406948018763-rklnd7tglpi2m07f5sj3lr3ptd2kq1vk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shoppingapp.io",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "406948018763-2q3dl5naritj36g3ssng2p82hqmtoh4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvUg8phcdwTdIPfEq3pxwWHvcxYorWvRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406948018763-2q3dl5naritj36g3ssng2p82hqmtoh4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "406948018763-4u96a5d8m52p5rvn1v0mtol5lvbm3fmk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.socialmediaflutappnx"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406948018763:android:2b7e246f9d015ad627abce",
+        "android_client_info": {
+          "package_name": "com.socialmediaflutappnx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406948018763-8o2vmngsko0ddrt09cmqvjldjuh9sfd3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.socialmediaflutappnx",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "406948018763-2q3dl5naritj36g3ssng2p82hqmtoh4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvUg8phcdwTdIPfEq3pxwWHvcxYorWvRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406948018763-2q3dl5naritj36g3ssng2p82hqmtoh4f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "406948018763-4u96a5d8m52p5rvn1v0mtol5lvbm3fmk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.socialmediaflutappnx"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -59,8 +59,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               color: FlutterFlowTheme.of(context).primaryText,
               size: 30.0,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              context.safePop();
             },
           ),
           title: Text(

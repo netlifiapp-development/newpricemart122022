@@ -3,12 +3,10 @@ import '/backend/backend.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/cart_item_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -417,122 +415,8 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 24.0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'ju57bkqm' /* Select your dishes from the me... */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Color(0xFF797979),
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.normal,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmallFamily),
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              FlutterFlowChoiceChips(
-                                options: [
-                                  ChipData(FFLocalizations.of(context).getText(
-                                    '4ltoyzso' /* Recommended */,
-                                  )),
-                                  ChipData(FFLocalizations.of(context).getText(
-                                    'feqeu2ey' /* Veg */,
-                                  )),
-                                  ChipData(FFLocalizations.of(context).getText(
-                                    'ah5gczy7' /* Non Veg */,
-                                  )),
-                                  ChipData(FFLocalizations.of(context).getText(
-                                    '6mmlsv7j' /* Sides */,
-                                  )),
-                                  ChipData(FFLocalizations.of(context).getText(
-                                    '57m8wlfg' /* Salads */,
-                                  )),
-                                  ChipData(FFLocalizations.of(context).getText(
-                                    '6hfyq9hn' /* Beverages */,
-                                  )),
-                                  ChipData(FFLocalizations.of(context).getText(
-                                    '1uwnv8rl' /* Desserts */,
-                                  )),
-                                  ChipData(FFLocalizations.of(context).getText(
-                                    'g199kzd0' /* All */,
-                                  ))
-                                ],
-                                onChanged: (val) => setState(
-                                    () => _model.choiceChipsValue = val?.first),
-                                selectedChipStyle: ChipStyle(
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).tertiary,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .bodyMediumFamily,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 12.0,
-                                        fontWeight: FontWeight.w500,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily),
-                                      ),
-                                  iconColor: Color(0x00000000),
-                                  iconSize: 18.0,
-                                  elevation: 0.0,
-                                ),
-                                unselectedChipStyle: ChipStyle(
-                                  backgroundColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodySmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .bodySmallFamily,
-                                        color: Color(0xFF323B45),
-                                        fontSize: 12.0,
-                                        fontWeight: FontWeight.normal,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmallFamily),
-                                      ),
-                                  iconColor: Color(0xFF323B45),
-                                  iconSize: 18.0,
-                                  elevation: 0.0,
-                                ),
-                                chipSpacing: 8.0,
-                                multiselect: false,
-                                initialized: _model.choiceChipsValue != null,
-                                alignment: WrapAlignment.start,
-                                controller:
-                                    _model.choiceChipsValueController ??=
-                                        FormFieldController<List<String>>(
-                                  [
-                                    FFLocalizations.of(context).getText(
-                                      'ubcylpyh' /* All */,
-                                    )
-                                  ],
-                                ),
-                              ),
-                              FutureBuilder<List<AllprodsRow>>(
-                                future: AllprodsTable().queryRows(
+                              FutureBuilder<List<ProductsRow>>(
+                                future: ProductsTable().queryRows(
                                   queryFn: (q) => q,
                                 ),
                                 builder: (context, snapshot) {
@@ -549,17 +433,17 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                       ),
                                     );
                                   }
-                                  List<AllprodsRow> columnAllprodsRowList =
+                                  List<ProductsRow> columnProductsRowList =
                                       snapshot.data!;
                                   return Column(
                                     mainAxisSize: MainAxisSize.min,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: List.generate(
-                                        columnAllprodsRowList.length,
+                                        columnProductsRowList.length,
                                         (columnIndex) {
-                                      final columnAllprodsRow =
-                                          columnAllprodsRowList[columnIndex];
+                                      final columnProductsRow =
+                                          columnProductsRowList[columnIndex];
                                       return Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
@@ -599,8 +483,8 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                           child: Text(
                                                             valueOrDefault<
                                                                 String>(
-                                                              columnAllprodsRow
-                                                                  .title,
+                                                              columnProductsRow
+                                                                  .name,
                                                               'Banna',
                                                             ),
                                                             style: FlutterFlowTheme
@@ -631,8 +515,8 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                           child: Text(
                                                             valueOrDefault<
                                                                 String>(
-                                                              columnAllprodsRow
-                                                                  .description,
+                                                              columnProductsRow
+                                                                  .price,
                                                               'Secribe',
                                                             ),
                                                             style: FlutterFlowTheme
@@ -656,11 +540,10 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                           ),
                                                         ),
                                                         Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            columnAllprodsRow
-                                                                .price,
-                                                            '500',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'z2u89dbr' /* Points:  1 */,
                                                           ),
                                                           maxLines: 2,
                                                           style: FlutterFlowTheme
@@ -714,12 +597,12 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                               imageUrl:
                                                                   valueOrDefault<
                                                                       String>(
-                                                                columnAllprodsRow
+                                                                columnProductsRow
                                                                     .image,
                                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/homeecom-0r27cc/assets/ce8bngcoowvt/banana.png',
                                                               ),
-                                                              width: 150.0,
-                                                              height: 100.0,
+                                                              width: 127.0,
+                                                              height: 97.0,
                                                               fit: BoxFit.cover,
                                                             ),
                                                           ),
@@ -729,16 +612,13 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                             final userCartCreateData =
                                                                 createUserCartRecordData(
                                                               name:
-                                                                  columnAllprodsRow
-                                                                      .title,
+                                                                  columnProductsRow
+                                                                      .name,
                                                               price:
-                                                                  columnAllprodsRow
+                                                                  columnProductsRow
                                                                       .price,
-                                                              description:
-                                                                  columnAllprodsRow
-                                                                      .description,
                                                               image:
-                                                                  columnAllprodsRow
+                                                                  columnProductsRow
                                                                       .image,
                                                               user:
                                                                   currentUserReference,

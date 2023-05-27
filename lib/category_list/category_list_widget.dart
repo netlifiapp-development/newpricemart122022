@@ -15,7 +15,7 @@ class CategoryListWidget extends StatefulWidget {
     this.listcat,
   }) : super(key: key);
 
-  final AllprodsRow? listcat;
+  final ProductsRow? listcat;
 
   @override
   _CategoryListWidgetState createState() => _CategoryListWidgetState();
@@ -74,7 +74,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'wx23952f' /* Fast Delivery */,
+                    'wx23952f' /* All Items */,
                   ),
                   style: FlutterFlowTheme.of(context).displaySmall.override(
                         fontFamily:
@@ -129,8 +129,8 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                child: FutureBuilder<List<AllprodsRow>>(
-                  future: AllprodsTable().queryRows(
+                child: FutureBuilder<List<ProductsRow>>(
+                  future: ProductsTable().queryRows(
                     queryFn: (q) => q,
                   ),
                   builder: (context, snapshot) {
@@ -146,16 +146,16 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                         ),
                       );
                     }
-                    List<AllprodsRow> listViewAllprodsRowList = snapshot.data!;
+                    List<ProductsRow> listViewProductsRowList = snapshot.data!;
                     return ListView.builder(
                       padding: EdgeInsets.zero,
                       primary: false,
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
-                      itemCount: listViewAllprodsRowList.length,
+                      itemCount: listViewProductsRowList.length,
                       itemBuilder: (context, listViewIndex) {
-                        final listViewAllprodsRow =
-                            listViewAllprodsRowList[listViewIndex];
+                        final listViewProductsRow =
+                            listViewProductsRowList[listViewIndex];
                         return Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
@@ -185,7 +185,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(6.0),
                                       child: Image.network(
-                                        listViewAllprodsRow.image!,
+                                        listViewProductsRow.image!,
                                         width: 80.0,
                                         height: 80.0,
                                         fit: BoxFit.contain,
@@ -204,7 +204,10 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           AutoSizeText(
-                                            listViewAllprodsRow.title!,
+                                            valueOrDefault<String>(
+                                              listViewProductsRow.name,
+                                              'egg',
+                                            ),
                                             maxLines: 2,
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
@@ -227,10 +230,9 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 8.0, 0.0),
                                             child: AutoSizeText(
-                                              listViewAllprodsRow.description!
-                                                  .maybeHandleOverflow(
-                                                maxChars: 70,
-                                                replacement: '…',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'iww1o40f' /* Pieces/Kg */,
                                               ),
                                               textAlign: TextAlign.start,
                                               style:
@@ -275,7 +277,10 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 4.0, 8.0),
                                         child: Text(
-                                          listViewAllprodsRow.price!,
+                                          valueOrDefault<String>(
+                                            listViewProductsRow.price,
+                                            '120',
+                                          ),
                                           textAlign: TextAlign.end,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

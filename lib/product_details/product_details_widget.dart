@@ -18,7 +18,7 @@ class ProductDetailsWidget extends StatefulWidget {
     this.pdetails,
   }) : super(key: key);
 
-  final AllprodsRow? pdetails;
+  final ProductsRow? pdetails;
 
   @override
   _ProductDetailsWidgetState createState() => _ProductDetailsWidgetState();
@@ -102,7 +102,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.network(
-                        widget.pdetails!.image!,
+                        _model.orderstoot!.image,
                         width: MediaQuery.of(context).size.width * 0.96,
                         height: 40.0,
                         fit: BoxFit.cover,
@@ -119,10 +119,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 children: [
                   Expanded(
                     child: Text(
-                      valueOrDefault<String>(
-                        widget.pdetails?.title,
-                        'banna',
-                      ),
+                      _model.orderstoot!.name,
                       style: FlutterFlowTheme.of(context).headlineSmall,
                     ),
                   ),
@@ -136,16 +133,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    FFLocalizations.of(context).getText(
-                      'navnzkpa' /* Description */,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodySmall,
-                  ),
-                  Text(
-                    valueOrDefault<String>(
-                      widget.pdetails?.price,
-                      '123',
-                    ),
+                    _model.orderstoot!.price,
                     textAlign: TextAlign.end,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Lexend Deca',
@@ -167,9 +155,8 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 children: [
                   Expanded(
                     child: Text(
-                      valueOrDefault<String>(
-                        widget.pdetails?.description,
-                        'deddfd',
+                      FFLocalizations.of(context).getText(
+                        'f8zv1gk4' /* Sporty style from the archives... */,
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall,
                     ),
@@ -218,17 +205,22 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                   FFButtonWidget(
                     onPressed: () async {
                       final userCartCreateData = createUserCartRecordData(
-                        name: widget.pdetails?.title,
-                        price: widget.pdetails?.price,
-                        description: widget.pdetails?.description,
-                        image: widget.pdetails?.image,
+                        name: valueOrDefault<String>(
+                          _model.orderstoot!.name,
+                          'egg',
+                        ),
+                        price: valueOrDefault<String>(
+                          _model.orderstoot!.price,
+                          '120',
+                        ),
+                        image: _model.orderstoot!.image,
                         user: currentUserReference,
                         timestamp: getCurrentTimestamp,
                       );
                       var userCartRecordReference =
                           UserCartRecord.collection.doc();
                       await userCartRecordReference.set(userCartCreateData);
-                      _model.orderstoo = UserCartRecord.getDocumentFromData(
+                      _model.orderstoot = UserCartRecord.getDocumentFromData(
                           userCartCreateData, userCartRecordReference);
 
                       context.pushNamed(

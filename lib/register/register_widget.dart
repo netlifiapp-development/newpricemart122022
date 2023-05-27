@@ -898,8 +898,8 @@ class _RegisterWidgetState extends State<RegisterWidget>
                                                             .update(
                                                                 usersCreateData);
 
-                                                        context.goNamedAuth(
-                                                            'Home',
+                                                        context.pushNamedAuth(
+                                                            'Updateprofile',
                                                             context.mounted);
                                                       },
                                                       text: FFLocalizations.of(

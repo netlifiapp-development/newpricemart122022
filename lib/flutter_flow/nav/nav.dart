@@ -97,12 +97,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Home',
           path: '/home',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Home')
-              : HomeWidget(
-                  egg: params.getParam<AllprodsRow>(
-                      'egg', ParamType.SupabaseRow),
-                ),
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Home') : HomeWidget(),
         ),
         FFRoute(
           name: 'CategoryList',
@@ -110,7 +106,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'CategoryList')
               : CategoryListWidget(
-                  listcat: params.getParam<AllprodsRow>(
+                  listcat: params.getParam<ProductsRow>(
                       'listcat', ParamType.SupabaseRow),
                 ),
         ),
@@ -131,7 +127,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/productDetails',
           builder: (context, params) => ProductDetailsWidget(
             pdetails:
-                params.getParam<AllprodsRow>('pdetails', ParamType.SupabaseRow),
+                params.getParam<ProductsRow>('pdetails', ParamType.SupabaseRow),
           ),
         ),
         FFRoute(
@@ -148,6 +144,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Register',
           path: '/register',
           builder: (context, params) => RegisterWidget(),
+        ),
+        FFRoute(
+          name: 'Home8ProductList',
+          path: '/home8ProductList',
+          builder: (context, params) => Home8ProductListWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

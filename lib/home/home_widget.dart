@@ -7,7 +7,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,12 +14,7 @@ import 'home_model.dart';
 export 'home_model.dart';
 
 class HomeWidget extends StatefulWidget {
-  const HomeWidget({
-    Key? key,
-    this.egg,
-  }) : super(key: key);
-
-  final AllprodsRow? egg;
+  const HomeWidget({Key? key}) : super(key: key);
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -367,499 +361,122 @@ class _HomeWidgetState extends State<HomeWidget> {
                 decoration: BoxDecoration(),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                  child: ListView(
-                    padding: EdgeInsets.zero,
-                    primary: false,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'CategoryList',
-                              queryParams: {
-                                'listcat': serializeParam(
-                                  widget.egg,
-                                  ParamType.SupabaseRow,
-                                ),
-                              }.withoutNulls,
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.bottomToTop,
-                                ),
-                              },
-                            );
-                          },
-                          child: Container(
-                            width: 95.6,
-                            height: 190.0,
-                            decoration: BoxDecoration(
-                              color: Color(0x85ECAA68),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4.0,
-                                  color: Color(0x230E151B),
-                                  offset: Offset(0.0, 2.0),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 4.0, 4.0, 4.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/images/2download.svg',
-                                    width: 50.0,
-                                    height: 50.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: AutoSizeText(
-                                      FFLocalizations.of(context).getText(
-                                        'kmjbu1dc' /* Egg */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.normal,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmallFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                  child: FutureBuilder<List<CategoryRow>>(
+                    future: CategoryTable().queryRows(
+                      queryFn: (q) => q,
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              color: FlutterFlowTheme.of(context).primary,
                             ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'CategoryList',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.bottomToTop,
-                                ),
-                              },
-                            );
-                          },
-                          child: Container(
-                            width: 95.6,
-                            height: 190.0,
-                            decoration: BoxDecoration(
-                              color: Color(0x85ECAA68),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4.0,
-                                  color: Color(0x230E151B),
-                                  offset: Offset(0.0, 2.0),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 4.0, 4.0, 4.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/images/cookies.svg',
-                                    width: 50.0,
-                                    height: 50.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: AutoSizeText(
-                                      FFLocalizations.of(context).getText(
-                                        'ixpjaarr' /* Cookies */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.normal,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmallFamily),
-                                          ),
+                        );
+                      }
+                      List<CategoryRow> listViewCategoryRowList =
+                          snapshot.data!;
+                      return ListView.builder(
+                        padding: EdgeInsets.zero,
+                        primary: false,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: listViewCategoryRowList.length,
+                        itemBuilder: (context, listViewIndex) {
+                          final listViewCategoryRow =
+                              listViewCategoryRowList[listViewIndex];
+                          return Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 8.0, 0.0, 8.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'CategoryList',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType:
+                                          PageTransitionType.bottomToTop,
                                     ),
+                                  },
+                                );
+                              },
+                              child: Container(
+                                width: 95.6,
+                                height: 190.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0x85ECAA68),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color: Color(0x230E151B),
+                                      offset: Offset(0.0, 2.0),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      4.0, 4.0, 4.0, 4.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Image.network(
+                                        valueOrDefault<String>(
+                                          listViewCategoryRow.icon,
+                                          'diary.png',
+                                        ),
+                                        width: 50.0,
+                                        height: 50.0,
+                                        fit: BoxFit.cover,
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 0.0, 0.0),
+                                        child: AutoSizeText(
+                                          listViewCategoryRow.title!,
+                                          textAlign: TextAlign.center,
+                                          maxLines: 2,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodySmall
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmallFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 12.0,
+                                                fontWeight: FontWeight.normal,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmallFamily),
+                                              ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'CategoryList',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.bottomToTop,
-                                ),
-                              },
-                            );
-                          },
-                          child: Container(
-                            width: 95.6,
-                            height: 190.0,
-                            decoration: BoxDecoration(
-                              color: Color(0x85ECAA68),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4.0,
-                                  color: Color(0x230E151B),
-                                  offset: Offset(0.0, 2.0),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 4.0, 4.0, 4.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/images/vege.svg',
-                                    width: 50.0,
-                                    height: 50.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: AutoSizeText(
-                                      FFLocalizations.of(context).getText(
-                                        'xlv95rje' /* Vegetables */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.normal,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmallFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'CategoryList',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.bottomToTop,
-                                ),
-                              },
-                            );
-                          },
-                          child: Container(
-                            width: 95.6,
-                            height: 190.0,
-                            decoration: BoxDecoration(
-                              color: Color(0x85ECAA68),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4.0,
-                                  color: Color(0x230E151B),
-                                  offset: Offset(0.0, 2.0),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 4.0, 4.0, 4.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/images/noodels.svg',
-                                    width: 50.0,
-                                    height: 50.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: AutoSizeText(
-                                      FFLocalizations.of(context).getText(
-                                        'o1mvses8' /* Instant Meals */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.normal,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmallFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'CategoryList',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.bottomToTop,
-                                ),
-                              },
-                            );
-                          },
-                          child: Container(
-                            width: 95.6,
-                            height: 190.0,
-                            decoration: BoxDecoration(
-                              color: Color(0x85ECAA68),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4.0,
-                                  color: Color(0x230E151B),
-                                  offset: Offset(0.0, 2.0),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 4.0, 4.0, 4.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/images/condim,ents.svg',
-                                    width: 50.0,
-                                    height: 50.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: AutoSizeText(
-                                      FFLocalizations.of(context).getText(
-                                        '36d9y7cx' /* Condiments */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.normal,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmallFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed(
-                              'CategoryList',
-                              extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
-                                  hasTransition: true,
-                                  transitionType:
-                                      PageTransitionType.bottomToTop,
-                                ),
-                              },
-                            );
-                          },
-                          child: Container(
-                            width: 95.6,
-                            height: 190.0,
-                            decoration: BoxDecoration(
-                              color: Color(0x85ECAA68),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4.0,
-                                  color: Color(0x230E151B),
-                                  offset: Offset(0.0, 2.0),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  4.0, 4.0, 4.0, 4.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    'assets/images/download.svg',
-                                    width: 50.0,
-                                    height: 50.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: AutoSizeText(
-                                      FFLocalizations.of(context).getText(
-                                        'rv8umzda' /* Fruits */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmallFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            fontSize: 12.0,
-                                            fontWeight: FontWeight.normal,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmallFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
               ),
@@ -904,190 +521,149 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                child: Material(
-                  color: Colors.transparent,
-                  elevation: 0.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 1.018,
-                    height: 85.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.contain,
-                        image: Image.asset(
-                          'assets/images/Screenshot_at_2023-04-12_17-05-46-removebg-preview_(1).png',
-                        ).image,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
+              FutureBuilder<List<ProductsRow>>(
+                future: ProductsTable().queryRows(
+                  queryFn: (q) => q,
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 44.0),
-                child: FutureBuilder<List<AllprodsRow>>(
-                  future: AllprodsTable().queryRows(
-                    queryFn: (q) => q,
-                  ),
-                  builder: (context, snapshot) {
-                    // Customize what your widget looks like when it's loading.
-                    if (!snapshot.hasData) {
-                      return Center(
-                        child: SizedBox(
-                          width: 50.0,
-                          height: 50.0,
-                          child: CircularProgressIndicator(
-                            color: FlutterFlowTheme.of(context).primary,
+                builder: (context, snapshot) {
+                  // Customize what your widget looks like when it's loading.
+                  if (!snapshot.hasData) {
+                    return Center(
+                      child: SizedBox(
+                        width: 50.0,
+                        height: 50.0,
+                        child: CircularProgressIndicator(
+                          color: FlutterFlowTheme.of(context).primary,
+                        ),
+                      ),
+                    );
+                  }
+                  List<ProductsRow> columnProductsRowList = snapshot.data!;
+                  return Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: List.generate(columnProductsRowList.length,
+                        (columnIndex) {
+                      final columnProductsRow =
+                          columnProductsRowList[columnIndex];
+                      return Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 8.0),
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 3.0,
+                                color: Color(0x411D2429),
+                                offset: Offset(0.0, 1.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 8.0, 8.0, 8.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 1.0, 1.0, 1.0),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(6.0),
+                                    child: Image.network(
+                                      columnProductsRow.image!,
+                                      width: 80.0,
+                                      height: 80.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 8.0, 4.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        AutoSizeText(
+                                          columnProductsRow.name!
+                                              .maybeHandleOverflow(maxChars: 8),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 8.0, 0.0),
+                                          child: AutoSizeText(
+                                            FFLocalizations.of(context).getText(
+                                              '5lsuz2d9' /* Points: 1 */,
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
+                                      child: Icon(
+                                        Icons.chevron_right_rounded,
+                                        color: Color(0xFF57636C),
+                                        size: 24.0,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 4.0, 8.0),
+                                      child: Text(
+                                        columnProductsRow.price!,
+                                        textAlign: TextAlign.end,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       );
-                    }
-                    List<AllprodsRow> wrapAllprodsRowList = snapshot.data!;
-                    return Wrap(
-                      spacing: 8.0,
-                      runSpacing: 8.0,
-                      alignment: WrapAlignment.start,
-                      crossAxisAlignment: WrapCrossAlignment.start,
-                      direction: Axis.horizontal,
-                      runAlignment: WrapAlignment.start,
-                      verticalDirection: VerticalDirection.down,
-                      clipBehavior: Clip.antiAlias,
-                      children: List.generate(wrapAllprodsRowList.length,
-                          (wrapIndex) {
-                        final wrapAllprodsRow = wrapAllprodsRowList[wrapIndex];
-                        return Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 8.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.pushNamed(
-                                'ProductDetails',
-                                queryParams: {
-                                  'pdetails': serializeParam(
-                                    wrapAllprodsRow,
-                                    ParamType.SupabaseRow,
-                                  ),
-                                }.withoutNulls,
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType:
-                                        PageTransitionType.bottomToTop,
-                                  ),
-                                },
-                              );
-                            },
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 4.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: Container(
-                                width: MediaQuery.of(context).size.width * 0.45,
-                                height: 190.0,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      4.0, 4.0, 4.0, 4.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                          child: Image.network(
-                                            valueOrDefault<String>(
-                                              wrapAllprodsRow.image,
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/homeecom-0r27cc/assets/ce8bngcoowvt/banana.png',
-                                            ),
-                                            width: 100.0,
-                                            height: 100.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 12.0, 0.0, 0.0),
-                                        child: AutoSizeText(
-                                          wrapAllprodsRow.title!,
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
-                                                fontSize: 14.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 12.0, 0.0, 0.0),
-                                        child: AutoSizeText(
-                                          valueOrDefault<String>(
-                                            wrapAllprodsRow.price,
-                                            '120',
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxLines: 1,
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMediumFamily,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                fontSize: 14.0,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMediumFamily),
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
-                    );
-                  },
-                ),
+                    }),
+                  );
+                },
               ),
             ],
           ),

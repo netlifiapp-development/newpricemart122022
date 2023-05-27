@@ -14,7 +14,7 @@ class ProductDetailsModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  UserCartRecord? orderstoo;
+  UserCartRecord? orderstoot;
 
   /// Initialization and disposal methods.
 

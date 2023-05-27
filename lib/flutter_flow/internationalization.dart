@@ -111,48 +111,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Cart',
       'tl': '',
     },
-    'ju57bkqm': {
-      'en': 'Select your dishes from the menu below.',
-      'tl': '',
-    },
-    '4ltoyzso': {
-      'en': 'Recommended',
-      'tl': '',
-    },
-    'feqeu2ey': {
-      'en': 'Veg',
-      'tl': '',
-    },
-    'ah5gczy7': {
-      'en': 'Non Veg',
-      'tl': '',
-    },
-    '6mmlsv7j': {
-      'en': 'Sides',
-      'tl': '',
-    },
-    '57m8wlfg': {
-      'en': 'Salads',
-      'tl': '',
-    },
-    '6hfyq9hn': {
-      'en': 'Beverages',
-      'tl': '',
-    },
-    '1uwnv8rl': {
-      'en': 'Desserts',
-      'tl': '',
-    },
-    'g199kzd0': {
-      'en': 'All',
-      'tl': '',
-    },
-    'ubcylpyh': {
-      'en': 'All',
-      'tl': '',
-    },
-    '913vsxax': {
-      'en': 'All',
+    'z2u89dbr': {
+      'en': 'Points:  1',
       'tl': '',
     },
     'vpoe6lzh': {
@@ -201,10 +161,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Search products...',
       'tl': '',
     },
-    'kmjbu1dc': {
-      'en': 'Egg',
-      'tl': '',
-    },
     'ixpjaarr': {
       'en': 'Cookies',
       'tl': '',
@@ -233,8 +189,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'See All',
       'tl': '',
     },
-    'jilrf3s1': {
-      'en': 'Category Name',
+    '5lsuz2d9': {
+      'en': 'Points: 1',
       'tl': '',
     },
     'qt6r0d9e': {
@@ -245,11 +201,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // CategoryList
   {
     'wx23952f': {
-      'en': 'Fast Delivery',
+      'en': 'All Items',
       'tl': '',
     },
     '25tnng7d': {
       'en': ' ',
+      'tl': '',
+    },
+    'iww1o40f': {
+      'en': 'Pieces/Kg',
       'tl': '',
     },
     'gjyf4nkg': {
@@ -417,8 +377,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Back to Products',
       'tl': '',
     },
-    'navnzkpa': {
-      'en': 'Description',
+    'f8zv1gk4': {
+      'en':
+          'Sporty style from the archives inspires this iconic track top. A stand-up collar and the signature sheen of tricot give it a retro vibe. Made for relaxing between sessions, the full-zip jacket has a recycled polyester build.',
       'tl': '',
     },
     'wj1zx3ex': {
@@ -523,6 +484,105 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'tl': '',
     },
     'qoprnt9v': {
+      'en': 'Home',
+      'tl': '',
+    },
+  },
+  // Home8ProductList
+  {
+    'b87yklex': {
+      'en': 'Order Now',
+      'tl': '',
+    },
+    'azihu1mi': {
+      'en': 'Our menu is below',
+      'tl': '',
+    },
+    'bzp5wouh': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'dokk0cub': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    '5et93261': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'bwgm48l4': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'tv9d7a92': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    '1zqmse5e': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    '834hdhmn': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'x0v36uvv': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    'sjucu7mn': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    '0zjh8m6r': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'tazhwx73': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    'pb1k3af1': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'm6tfysur': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'uko1cc4v': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    'isjqdgql': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'a2m046nh': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'te7ejms9': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    '60tksycs': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'b62thpf2': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'ugb5ely9': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    'xt21xfmj': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'ykauxryy': {
       'en': 'Home',
       'tl': '',
     },

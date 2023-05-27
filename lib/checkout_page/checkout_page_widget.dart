@@ -150,7 +150,10 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 4.0),
                                             child: Text(
-                                              cartItemsItem.name,
+                                              cartItemsItem.name
+                                                  .maybeHandleOverflow(
+                                                      maxChars: 10),
+                                              maxLines: 2,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

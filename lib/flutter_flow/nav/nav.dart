@@ -146,9 +146,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => RegisterWidget(),
         ),
         FFRoute(
-          name: 'Home8ProductList',
-          path: '/home8ProductList',
-          builder: (context, params) => Home8ProductListWidget(),
+          name: 'ProductList',
+          path: '/productList',
+          builder: (context, params) => ProductListWidget(),
+        ),
+        FFRoute(
+          name: 'ForgotPassword',
+          path: '/forgotPassword',
+          builder: (context, params) => ForgotPasswordWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

@@ -16,9 +16,6 @@ import 'package:provider/provider.dart';
 class RegisterModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for NameField widget.
-  TextEditingController? nameFieldController;
-  String? Function(BuildContext, String?)? nameFieldControllerValidator;
   // State field(s) for EmailAddressField widget.
   TextEditingController? emailAddressFieldController;
   String? Function(BuildContext, String?)? emailAddressFieldControllerValidator;
@@ -48,7 +45,6 @@ class RegisterModel extends FlutterFlowModel {
   }
 
   void dispose() {
-    nameFieldController?.dispose();
     emailAddressFieldController?.dispose();
     passwordFieldController?.dispose();
     confirmPasswordFieldController?.dispose();

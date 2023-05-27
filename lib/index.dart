@@ -9,5 +9,5 @@ export '/product_details/product_details_widget.dart' show ProductDetailsWidget;
 export '/onboard1/onboard1_widget.dart' show Onboard1Widget;
 export '/onboard2/onboard2_widget.dart' show Onboard2Widget;
 export '/register/register_widget.dart' show RegisterWidget;
-export '/home8_product_list/home8_product_list_widget.dart'
-    show Home8ProductListWidget;
+export '/product_list/product_list_widget.dart' show ProductListWidget;
+export '/forgot_password/forgot_password_widget.dart' show ForgotPasswordWidget;

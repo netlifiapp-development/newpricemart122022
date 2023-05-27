@@ -22,4 +22,7 @@ class CategoryRow extends SupabaseDataRow {
 
   int get uid => getField<int>('uid')!;
   set uid(int value) => setField<int>('uid', value);
+
+  String? get iconImage => getField<String>('icon_image');
+  set iconImage(String? value) => setField<String>('icon_image', value);
 }

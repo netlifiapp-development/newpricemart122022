@@ -12,7 +12,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'menu_page_model.dart';
@@ -80,27 +79,30 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
         title: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                context.pushNamed('Home');
-              },
-              child: FaIcon(
-                FontAwesomeIcons.home,
-                color: FlutterFlowTheme.of(context).secondaryText,
-                size: 28.0,
-              ),
-            ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-              child: Image.asset(
-                'assets/images/logo.png',
-                width: 120.0,
-                height: 45.0,
-                fit: BoxFit.contain,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(
+                    'Home',
+                    extra: <String, dynamic>{
+                      kTransitionInfoKey: TransitionInfo(
+                        hasTransition: true,
+                        transitionType: PageTransitionType.rightToLeft,
+                      ),
+                    },
+                  );
+                },
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 120.0,
+                  height: 45.0,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
           ],
@@ -114,12 +116,12 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
               borderWidth: 1.0,
               buttonSize: 50.0,
               icon: Icon(
-                Icons.shopping_cart_sharp,
-                color: FlutterFlowTheme.of(context).alternate,
+                Icons.settings,
+                color: FlutterFlowTheme.of(context).secondaryText,
                 size: 30.0,
               ),
               onPressed: () async {
-                context.pushNamed('Home');
+                context.pushNamed('Profile');
               },
             ),
           ),
@@ -489,19 +491,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  useGoogleFonts: GoogleFonts
-                                                                          .asMap()
-                                                                      .containsKey(
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily),
-                                                                ),
+                                                                .labelMedium,
                                                           ),
                                                         ),
                                                         Padding(
@@ -521,21 +511,19 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyMedium
+                                                                .labelSmall
                                                                 .override(
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMediumFamily,
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
+                                                                      .labelSmallFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
                                                                   useGoogleFonts: GoogleFonts
                                                                           .asMap()
                                                                       .containsKey(
                                                                           FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily),
+                                                                              .labelSmallFamily),
                                                                 ),
                                                           ),
                                                         ),
@@ -548,23 +536,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                           maxLines: 2,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                color: Color(
-                                                                    0xFF626C73),
-                                                                fontSize: 12.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                              ),
+                                                              .labelSmall,
                                                         ),
                                                       ],
                                                     ),
@@ -601,9 +573,10 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                                     .image,
                                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/homeecom-0r27cc/assets/ce8bngcoowvt/banana.png',
                                                               ),
-                                                              width: 127.0,
-                                                              height: 97.0,
-                                                              fit: BoxFit.cover,
+                                                              width: 88.0,
+                                                              height: 80.0,
+                                                              fit: BoxFit
+                                                                  .contain,
                                                             ),
                                                           ),
                                                         ),

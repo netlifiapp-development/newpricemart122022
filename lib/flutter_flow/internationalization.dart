@@ -182,7 +182,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'tl': '',
     },
     'dx3lm2ll': {
-      'en': 'Categories',
+      'en': 'Shop now',
       'tl': '',
     },
     'e87jxeru': {
@@ -411,14 +411,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Create Account',
       'tl': '',
     },
-    'efp2gir8': {
-      'en': 'Name',
-      'tl': '',
-    },
-    '467cc09x': {
-      'en': 'Enter your name',
-      'tl': '',
-    },
     'yj0a1f6c': {
       'en': 'Email',
       'tl': '',
@@ -445,10 +437,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jpphhm5m': {
       'en': 'Create Account',
-      'tl': '',
-    },
-    '8zogyp9o': {
-      'en': 'Sign in',
       'tl': '',
     },
     'xb1d6cr8': {
@@ -479,8 +467,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Skip for now',
       'tl': '',
     },
-    '7hnk6szn': {
-      'en': 'Create account',
+    '1jm5zwaa': {
+      'en': 'Forgot Password',
       'tl': '',
     },
     'qoprnt9v': {
@@ -488,26 +476,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'tl': '',
     },
   },
-  // Home8ProductList
+  // ProductList
   {
     'b87yklex': {
-      'en': 'Order Now',
+      'en': 'Add to cart',
       'tl': '',
     },
     'azihu1mi': {
-      'en': 'Our menu is below',
-      'tl': '',
-    },
-    'bzp5wouh': {
-      'en': 'Title',
+      'en': 'All Products',
       'tl': '',
     },
     'dokk0cub': {
-      'en': 'Subtext',
-      'tl': '',
-    },
-    '5et93261': {
-      'en': '\$11.00',
+      'en': 'Points 0.5',
       'tl': '',
     },
     'bwgm48l4': {
@@ -583,6 +563,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'tl': '',
     },
     'ykauxryy': {
+      'en': 'Home',
+      'tl': '',
+    },
+  },
+  // ForgotPassword
+  {
+    'cy1mmm44': {
+      'en': 'Back',
+      'tl': '',
+    },
+    'f9yn4ry8': {
+      'en': 'Forgot Password',
+      'tl': '',
+    },
+    'mmdvea6p': {
+      'en':
+          'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
+      'tl': '',
+    },
+    'stfdw0oc': {
+      'en': 'Your email address...',
+      'tl': '',
+    },
+    '3dwvnoso': {
+      'en': 'Enter your email...',
+      'tl': '',
+    },
+    'mr3ojksv': {
+      'en': 'Send Link',
+      'tl': '',
+    },
+    'c3580ujq': {
       'en': 'Home',
       'tl': '',
     },

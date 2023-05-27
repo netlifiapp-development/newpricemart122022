@@ -2,7 +2,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,7 +52,9 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
             IconThemeData(color: FlutterFlowTheme.of(context).primaryText),
         automaticallyImplyLeading: true,
         title: Text(
-          'Cart',
+          FFLocalizations.of(context).getText(
+            'eqdqj5q3' /* Cart */,
+          ),
           style: FlutterFlowTheme.of(context).displaySmall.override(
                 fontFamily: 'Outfit',
                 color: Color(0xFF0F1113),
@@ -82,7 +83,9 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 24.0),
                       child: Text(
-                        'Select your dishes from the menu below.',
+                        FFLocalizations.of(context).getText(
+                          'zot8adbc' /* Select your dishes from the me... */,
+                        ),
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily: 'Outfit',
                               color: FlutterFlowTheme.of(context).primaryText,
@@ -121,12 +124,12 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Hero(
-                                    tag: cartItemsItem.image!,
+                                    tag: cartItemsItem.image,
                                     transitionOnUserGestures: true,
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: CachedNetworkImage(
-                                        imageUrl: cartItemsItem.image!,
+                                        imageUrl: cartItemsItem.image,
                                         width: 100.0,
                                         height: 65.0,
                                         fit: BoxFit.cover,
@@ -146,9 +149,8 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 4.0),
-                                            child: AutoSizeText(
-                                              cartItemsItem.name!,
-                                              maxLines: 3,
+                                            child: Text(
+                                              cartItemsItem.name,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -157,9 +159,7 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMediumFamily,
-                                                        fontSize: 14.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
+                                                        fontSize: 16.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(
@@ -170,7 +170,9 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
                                             ),
                                           ),
                                           Text(
-                                            'qnt: 1',
+                                            FFLocalizations.of(context).getText(
+                                              'wngk9ldh' /* qnt: 1 */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -196,7 +198,7 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: Text(
-                                      cartItemsItem.price!,
+                                      cartItemsItem.price,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -227,22 +229,48 @@ class _CheckoutPageWidgetState extends State<CheckoutPageWidget> {
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      FFLocalizations.of(context).getText(
+                        'p94ogrnx' /* Total Price */,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.w500,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                    ),
+                    Text(
+                      FFLocalizations.of(context).getText(
+                        '3by4n1qg' /* ₱10.99 */,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.w500,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed(
-                      'Payment',
-                      queryParams: {
-                        'paynow': serializeParam(
-                          widget.cart?[widget.cart!.length],
-                          ParamType.Document,
-                        ),
-                      }.withoutNulls,
-                      extra: <String, dynamic>{
-                        'paynow': widget.cart?[widget.cart!.length],
-                      },
-                    );
+                    context.pop();
                   },
-                  text: 'Checkout',
+                  text: FFLocalizations.of(context).getText(
+                    'rm49aqis' /* Checkout */,
+                  ),
                   options: FFButtonOptions(
                     width: double.infinity,
                     height: 55.0,

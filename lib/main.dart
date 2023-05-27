@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'auth/firebase_user_provider.dart';
-import 'auth/auth_util.dart';
+import 'auth/firebase_auth/firebase_user_provider.dart';
+import 'auth/firebase_auth/auth_util.dart';
 
 import '/backend/supabase/supabase.dart';
 import 'backend/firebase/firebase_config.dart';
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
   Locale? _locale;
   ThemeMode _themeMode = ThemeMode.system;
 
-  late Stream<PricemartFirebaseUser> userStream;
+  late Stream<BaseAuthUser> userStream;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
@@ -87,6 +87,7 @@ class _MyAppState extends State<MyApp> {
       locale: _locale,
       supportedLocales: const [
         Locale('en'),
+        Locale('tl'),
       ],
       theme: ThemeData(brightness: Brightness.light),
       themeMode: _themeMode,
@@ -124,9 +125,9 @@ class _NavBarPageState extends State<NavBarPage> {
       'Home': HomeWidget(),
       'CategoryList': CategoryListWidget(),
       'Profile': ProfileWidget(),
-      'Allorders': AllordersWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
+
     return Scaffold(
       body: _currentPage ?? tabs[_currentPageName],
       bottomNavigationBar: BottomNavigationBar(
@@ -147,7 +148,9 @@ class _NavBarPageState extends State<NavBarPage> {
               FontAwesomeIcons.home,
               size: 22.0,
             ),
-            label: 'Home',
+            label: FFLocalizations.of(context).getText(
+              'qt6r0d9e' /* Home */,
+            ),
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -155,7 +158,9 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.shopping_basket,
               size: 30.0,
             ),
-            label: 'Category',
+            label: FFLocalizations.of(context).getText(
+              'z97600pt' /* Category */,
+            ),
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -163,15 +168,9 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.person,
               size: 30.0,
             ),
-            label: 'Profile',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.work,
-              size: 30.0,
+            label: FFLocalizations.of(context).getText(
+              '1hz353o6' /* Profile */,
             ),
-            label: 'Orders',
             tooltip: '',
           )
         ],

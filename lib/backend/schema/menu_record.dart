@@ -1,53 +1,75 @@
 import 'dart:async';
 
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'menu_record.g.dart';
+class MenuRecord extends FirestoreRecord {
+  MenuRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class MenuRecord implements Built<MenuRecord, MenuRecordBuilder> {
-  static Serializer<MenuRecord> get serializer => _$menuRecordSerializer;
+  // "name" field.
+  String? _name;
+  String get name => _name ?? '';
+  bool hasName() => _name != null;
 
-  String? get name;
+  // "price" field.
+  String? _price;
+  String get price => _price ?? '';
+  bool hasPrice() => _price != null;
 
-  String? get price;
+  // "description" field.
+  String? _description;
+  String get description => _description ?? '';
+  bool hasDescription() => _description != null;
 
-  String? get description;
+  // "type" field.
+  List<String>? _type;
+  List<String> get type => _type ?? const [];
+  bool hasType() => _type != null;
 
-  BuiltList<String>? get type;
+  // "image" field.
+  String? _image;
+  String get image => _image ?? '';
+  bool hasImage() => _image != null;
 
-  String? get image;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(MenuRecordBuilder builder) => builder
-    ..name = ''
-    ..price = ''
-    ..description = ''
-    ..type = ListBuilder()
-    ..image = '';
+  void _initializeFields() {
+    _name = snapshotData['name'] as String?;
+    _price = snapshotData['price'] as String?;
+    _description = snapshotData['description'] as String?;
+    _type = getDataList(snapshotData['type']);
+    _image = snapshotData['image'] as String?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('menu');
 
-  static Stream<MenuRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<MenuRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => MenuRecord.fromSnapshot(s));
 
-  static Future<MenuRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<MenuRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => MenuRecord.fromSnapshot(s));
 
-  MenuRecord._();
-  factory MenuRecord([void Function(MenuRecordBuilder) updates]) = _$MenuRecord;
+  static MenuRecord fromSnapshot(DocumentSnapshot snapshot) => MenuRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
 
   static MenuRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      MenuRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'MenuRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createMenuRecordData({
@@ -56,16 +78,13 @@ Map<String, dynamic> createMenuRecordData({
   String? description,
   String? image,
 }) {
-  final firestoreData = serializers.toFirestore(
-    MenuRecord.serializer,
-    MenuRecord(
-      (m) => m
-        ..name = name
-        ..price = price
-        ..description = description
-        ..type = null
-        ..image = image,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'name': name,
+      'price': price,
+      'description': description,
+      'image': image,
+    }.withoutNulls,
   );
 
   return firestoreData;

@@ -106,12 +106,12 @@ class _CartItemWidgetState extends State<CartItemWidget>
         Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
           child: Hero(
-            tag: widget.cartDocument!.image!,
+            tag: widget.cartDocument!.image,
             transitionOnUserGestures: true,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Image.network(
-                widget.cartDocument!.image!,
+                widget.cartDocument!.image,
                 width: 70.0,
                 height: 45.0,
                 fit: BoxFit.cover,
@@ -120,6 +120,10 @@ class _CartItemWidgetState extends State<CartItemWidget>
           ),
         ),
         InkWell(
+          splashColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          highlightColor: Colors.transparent,
           onTap: () async {
             if (animationsMap['stackOnActionTriggerAnimation'] != null) {
               await animationsMap['stackOnActionTriggerAnimation']!

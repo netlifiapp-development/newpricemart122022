@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -57,7 +57,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
           borderRadius: 30.0,
           buttonSize: 48.0,
           icon: Icon(
-            Icons.arrow_back_ios,
+            Icons.chevron_left_rounded,
             color: FlutterFlowTheme.of(context).secondaryText,
             size: 30.0,
           ),
@@ -65,14 +65,11 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
             context.safePop();
           },
         ),
-        title: InkWell(
-          onTap: () async {
-            context.safePop();
-          },
-          child: Text(
-            'Back to Products',
-            style: FlutterFlowTheme.of(context).bodySmall,
+        title: Text(
+          FFLocalizations.of(context).getText(
+            'p41cdb29' /* Back to Products */,
           ),
+          style: FlutterFlowTheme.of(context).bodySmall,
         ),
         actions: [],
         centerTitle: false,
@@ -139,7 +136,9 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Qty: 1',
+                    FFLocalizations.of(context).getText(
+                      'navnzkpa' /* Description */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodySmall,
                   ),
                   Text(
@@ -185,31 +184,33 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed('CheckoutPage');
+                    onPressed: () {
+                      print('Button pressed ...');
                     },
-                    text: 'Cart Items',
+                    text: FFLocalizations.of(context).getText(
+                      'wj1zx3ex' /* Add to Cart */,
+                    ),
                     options: FFButtonOptions(
-                      width: 120.0,
+                      width: 170.0,
                       height: 50.0,
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0x00FF5963),
+                      color: FlutterFlowTheme.of(context).alternate,
                       textStyle: FlutterFlowTheme.of(context)
                           .titleSmall
                           .override(
                             fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.of(context).primaryText,
+                            color: Colors.white,
                             fontSize: 16.0,
                             fontWeight: FontWeight.w500,
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).titleSmallFamily),
                           ),
-                      elevation: 0.0,
+                      elevation: 3.0,
                       borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).secondaryText,
+                        color: Colors.transparent,
                         width: 1.0,
                       ),
                     ),
@@ -242,15 +243,17 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
 
                       setState(() {});
                     },
-                    text: 'Order Now',
+                    text: FFLocalizations.of(context).getText(
+                      'f2bjqevp' /* Order Now */,
+                    ),
                     options: FFButtonOptions(
-                      width: 192.2,
+                      width: 170.0,
                       height: 50.0,
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondary,
+                      color: FlutterFlowTheme.of(context).primary,
                       textStyle: FlutterFlowTheme.of(context)
                           .titleSmall
                           .override(

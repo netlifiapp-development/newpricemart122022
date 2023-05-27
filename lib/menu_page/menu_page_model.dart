@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/cart_item_widget.dart';
@@ -23,7 +23,7 @@ class MenuPageModel extends FlutterFlowModel {
 
   // State field(s) for ChoiceChips widget.
   String? choiceChipsValue;
-  FormFieldController<List<String>>? choiceChipsController;
+  FormFieldController<List<String>>? choiceChipsValueController;
   // Stores action output result for [Backend Call - Create Document] action in AddButton widget.
   UserCartRecord? order;
 

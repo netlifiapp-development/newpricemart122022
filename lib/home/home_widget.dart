@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -63,7 +63,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 15.0),
                 child: FlutterFlowIconButton(
                   borderColor: Colors.transparent,
                   borderRadius: 30.0,
@@ -111,6 +111,10 @@ class _HomeWidgetState extends State<HomeWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 8.0),
               child: AuthUserStreamWidget(
                 builder: (context) => InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
                   onTap: () async {
                     context.pushNamed('Profile');
                   },
@@ -166,7 +170,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                               ),
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Search products...',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'g52zm4yx' /* Search products... */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
@@ -181,8 +187,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(12.0),
@@ -263,6 +269,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                       child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
                         onTap: () async {
                           context.pushNamed('MenuPage');
                         },
@@ -367,6 +377,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
                               'CategoryList',
@@ -417,7 +431,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: AutoSizeText(
-                                      'Egg',
+                                      FFLocalizations.of(context).getText(
+                                        'kmjbu1dc' /* Egg */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
@@ -447,6 +463,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
                               'CategoryList',
@@ -491,7 +511,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: AutoSizeText(
-                                      'Cookies',
+                                      FFLocalizations.of(context).getText(
+                                        'ixpjaarr' /* Cookies */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
@@ -521,6 +543,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
                               'CategoryList',
@@ -565,7 +591,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: AutoSizeText(
-                                      'Vegetables',
+                                      FFLocalizations.of(context).getText(
+                                        'xlv95rje' /* Vegetables */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
@@ -595,6 +623,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
                               'CategoryList',
@@ -639,7 +671,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: AutoSizeText(
-                                      'Instant Meals',
+                                      FFLocalizations.of(context).getText(
+                                        'o1mvses8' /* Instant Meals */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
@@ -669,6 +703,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
                               'CategoryList',
@@ -713,7 +751,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: AutoSizeText(
-                                      'Condiments',
+                                      FFLocalizations.of(context).getText(
+                                        '36d9y7cx' /* Condiments */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
@@ -743,6 +783,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 8.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             context.pushNamed(
                               'CategoryList',
@@ -787,7 +831,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: AutoSizeText(
-                                      'Fruits',
+                                      FFLocalizations.of(context).getText(
+                                        'rv8umzda' /* Fruits */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       maxLines: 2,
                                       style: FlutterFlowTheme.of(context)
@@ -827,7 +873,9 @@ class _HomeWidgetState extends State<HomeWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
                       child: Text(
-                        'Categories',
+                        FFLocalizations.of(context).getText(
+                          'dx3lm2ll' /* Categories */,
+                        ),
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).titleSmallFamily,
@@ -839,11 +887,17 @@ class _HomeWidgetState extends State<HomeWidget> {
                       ),
                     ),
                     InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
                       onTap: () async {
                         context.pushNamed('CategoryList');
                       },
                       child: Text(
-                        'See All',
+                        FFLocalizations.of(context).getText(
+                          'e87jxeru' /* See All */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                     ),
@@ -859,8 +913,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Container(
-                    width: MediaQuery.of(context).size.width * 1.0,
-                    height: 72.0,
+                    width: MediaQuery.of(context).size.width * 1.018,
+                    height: 85.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.contain,
@@ -909,6 +963,10 @@ class _HomeWidgetState extends State<HomeWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 8.0),
                           child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
                             onTap: () async {
                               context.pushNamed(
                                 'ProductDetails',

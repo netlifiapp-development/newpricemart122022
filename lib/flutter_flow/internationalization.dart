@@ -12,7 +12,7 @@ class FFLocalizations {
   static FFLocalizations of(BuildContext context) =>
       Localizations.of<FFLocalizations>(context, FFLocalizations)!;
 
-  static List<String> languages() => ['en'];
+  static List<String> languages() => ['en', 'tl'];
 
   static late SharedPreferences _prefs;
   static Future initialize() async =>
@@ -38,8 +38,9 @@ class FFLocalizations {
 
   String getVariableText({
     String? enText = '',
+    String? tlText = '',
   }) =>
-      [enText][languageIndex] ?? '';
+      [enText, tlText][languageIndex] ?? '';
 
   static const Set<String> _languagesWithShortCode = {
     'ar',
@@ -103,5 +104,522 @@ Locale createLocale(String language) => language.contains('_')
       )
     : Locale(language);
 
-final kTranslationsMap =
-    <Map<String, Map<String, String>>>[].reduce((a, b) => a..addAll(b));
+final kTranslationsMap = <Map<String, Map<String, String>>>[
+  // MenuPage
+  {
+    'pj16q0hq': {
+      'en': 'Cart',
+      'tl': '',
+    },
+    'ju57bkqm': {
+      'en': 'Select your dishes from the menu below.',
+      'tl': '',
+    },
+    '4ltoyzso': {
+      'en': 'Recommended',
+      'tl': '',
+    },
+    'feqeu2ey': {
+      'en': 'Veg',
+      'tl': '',
+    },
+    'ah5gczy7': {
+      'en': 'Non Veg',
+      'tl': '',
+    },
+    '6mmlsv7j': {
+      'en': 'Sides',
+      'tl': '',
+    },
+    '57m8wlfg': {
+      'en': 'Salads',
+      'tl': '',
+    },
+    '6hfyq9hn': {
+      'en': 'Beverages',
+      'tl': '',
+    },
+    '1uwnv8rl': {
+      'en': 'Desserts',
+      'tl': '',
+    },
+    'g199kzd0': {
+      'en': 'All',
+      'tl': '',
+    },
+    'ubcylpyh': {
+      'en': 'All',
+      'tl': '',
+    },
+    '913vsxax': {
+      'en': 'All',
+      'tl': '',
+    },
+    'vpoe6lzh': {
+      'en': 'Add',
+      'tl': '',
+    },
+    'ik8ffimo': {
+      'en': 'Home',
+      'tl': '',
+    },
+  },
+  // CheckoutPage
+  {
+    'eqdqj5q3': {
+      'en': 'Cart',
+      'tl': '',
+    },
+    'zot8adbc': {
+      'en': 'Select your dishes from the menu below.',
+      'tl': '',
+    },
+    'wngk9ldh': {
+      'en': 'qnt: 1',
+      'tl': '',
+    },
+    'p94ogrnx': {
+      'en': 'Total Price',
+      'tl': '',
+    },
+    '3by4n1qg': {
+      'en': '₱10.99',
+      'tl': '',
+    },
+    'rm49aqis': {
+      'en': 'Checkout',
+      'tl': '',
+    },
+    're9jtiqx': {
+      'en': 'Home',
+      'tl': '',
+    },
+  },
+  // Home
+  {
+    'g52zm4yx': {
+      'en': 'Search products...',
+      'tl': '',
+    },
+    'kmjbu1dc': {
+      'en': 'Egg',
+      'tl': '',
+    },
+    'ixpjaarr': {
+      'en': 'Cookies',
+      'tl': '',
+    },
+    'xlv95rje': {
+      'en': 'Vegetables',
+      'tl': '',
+    },
+    'o1mvses8': {
+      'en': 'Instant Meals',
+      'tl': '',
+    },
+    '36d9y7cx': {
+      'en': 'Condiments',
+      'tl': '',
+    },
+    'rv8umzda': {
+      'en': 'Fruits',
+      'tl': '',
+    },
+    'dx3lm2ll': {
+      'en': 'Categories',
+      'tl': '',
+    },
+    'e87jxeru': {
+      'en': 'See All',
+      'tl': '',
+    },
+    'jilrf3s1': {
+      'en': 'Category Name',
+      'tl': '',
+    },
+    'qt6r0d9e': {
+      'en': 'Home',
+      'tl': '',
+    },
+  },
+  // CategoryList
+  {
+    'wx23952f': {
+      'en': 'Fast Delivery',
+      'tl': '',
+    },
+    '25tnng7d': {
+      'en': ' ',
+      'tl': '',
+    },
+    'gjyf4nkg': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'izcjx4ym': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    'v9yz5wzm': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'fzesp3p0': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'fk2gpzbf': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    '5h2hnamx': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    '8zwtixlf': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'p3rd10rf': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    'cbee3amh': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'c20nkebf': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'srdh8cnm': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    'v7cercwl': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'lq9wwnfp': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'dgc65mcv': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    'xed5b22a': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'p3eyn109': {
+      'en': 'Title',
+      'tl': '',
+    },
+    'mkofzi2r': {
+      'en': 'Subtext',
+      'tl': '',
+    },
+    '7082jt6f': {
+      'en': '\$11.00',
+      'tl': '',
+    },
+    'z97600pt': {
+      'en': 'Category',
+      'tl': '',
+    },
+  },
+  // Profile
+  {
+    'wdkdczy8': {
+      'en': 'Account',
+      'tl': '',
+    },
+    'lq8kmhdk': {
+      'en': 'My Orders',
+      'tl': '',
+    },
+    'ofv1x6yl': {
+      'en': 'Rewards',
+      'tl': '',
+    },
+    '23w7zifc': {
+      'en': 'Unilevel Rewards',
+      'tl': '',
+    },
+    'g5r02dd0': {
+      'en': 'Edit Profile',
+      'tl': '',
+    },
+    'b7zsjob6': {
+      'en': 'General',
+      'tl': '',
+    },
+    'hfkyjsmg': {
+      'en': 'Send Qr Code',
+      'tl': '',
+    },
+    'hj6owimh': {
+      'en': 'Invite Friends',
+      'tl': '',
+    },
+    'lr2c6l4o': {
+      'en': 'Logout',
+      'tl': '',
+    },
+    '1hmqaedy': {
+      'en': 'Profile',
+      'tl': '',
+    },
+    '1hz353o6': {
+      'en': 'Profile',
+      'tl': '',
+    },
+  },
+  // Updateprofile
+  {
+    'nb7gm8c3': {
+      'en': 'Change Photo',
+      'tl': '',
+    },
+    '5bzmewow': {
+      'en': 'Sponsor ID',
+      'tl': '',
+    },
+    'vg24p6sh': {
+      'en': 'Full Name',
+      'tl': '',
+    },
+    'xftdxxjl': {
+      'en': 'Phone',
+      'tl': '',
+    },
+    'cd8v2m1y': {
+      'en': 'City',
+      'tl': '',
+    },
+    '62fnux1u': {
+      'en': 'Update Profile',
+      'tl': '',
+    },
+    'j4x5agxb': {
+      'en': 'Update Information',
+      'tl': '',
+    },
+    'dphcbb3d': {
+      'en': 'Skip',
+      'tl': '',
+    },
+  },
+  // ProductDetails
+  {
+    'p41cdb29': {
+      'en': 'Back to Products',
+      'tl': '',
+    },
+    'navnzkpa': {
+      'en': 'Description',
+      'tl': '',
+    },
+    'wj1zx3ex': {
+      'en': 'Add to Cart',
+      'tl': '',
+    },
+    'f2bjqevp': {
+      'en': 'Order Now',
+      'tl': '',
+    },
+  },
+  // Onboard1
+  {
+    'hq1ew3gn': {
+      'en': 'Home',
+      'tl': '',
+    },
+  },
+  // Onboard2
+  {
+    '5zy08x97': {
+      'en': 'Home',
+      'tl': '',
+    },
+  },
+  // Register
+  {
+    'df73rc4g': {
+      'en': 'Create Account',
+      'tl': '',
+    },
+    'efp2gir8': {
+      'en': 'Name',
+      'tl': '',
+    },
+    '467cc09x': {
+      'en': 'Enter your name',
+      'tl': '',
+    },
+    'yj0a1f6c': {
+      'en': 'Email',
+      'tl': '',
+    },
+    '47if5thi': {
+      'en': 'Enter your email',
+      'tl': '',
+    },
+    'wwufnrm9': {
+      'en': 'Password',
+      'tl': '',
+    },
+    '4n7ur5i8': {
+      'en': 'Enter your password',
+      'tl': '',
+    },
+    'w5uwro4b': {
+      'en': 'Confirm Password',
+      'tl': '',
+    },
+    'jki6ghkc': {
+      'en': 'Confirm your password',
+      'tl': '',
+    },
+    'jpphhm5m': {
+      'en': 'Create Account',
+      'tl': '',
+    },
+    '8zogyp9o': {
+      'en': 'Sign in',
+      'tl': '',
+    },
+    'xb1d6cr8': {
+      'en': 'Log In',
+      'tl': '',
+    },
+    'bjxjjw14': {
+      'en': 'Email address',
+      'tl': '',
+    },
+    'n9a3dpmt': {
+      'en': 'Enter your email...',
+      'tl': '',
+    },
+    '48ngzhpz': {
+      'en': 'Password',
+      'tl': '',
+    },
+    'rk92k8zv': {
+      'en': 'Enter your password...',
+      'tl': '',
+    },
+    '9svc7dsd': {
+      'en': 'Login',
+      'tl': '',
+    },
+    'glrdzlxp': {
+      'en': 'Skip for now',
+      'tl': '',
+    },
+    '7hnk6szn': {
+      'en': 'Create account',
+      'tl': '',
+    },
+    'qoprnt9v': {
+      'en': 'Home',
+      'tl': '',
+    },
+  },
+  // Miscellaneous
+  {
+    'lfleeww1': {
+      'en': '',
+      'tl': '',
+    },
+    'c8kadp77': {
+      'en': '',
+      'tl': '',
+    },
+    'k48k1o9l': {
+      'en': '',
+      'tl': '',
+    },
+    'vipvwyra': {
+      'en': '',
+      'tl': '',
+    },
+    'zcprzlre': {
+      'en': '',
+      'tl': '',
+    },
+    'e4842lsx': {
+      'en': '',
+      'tl': '',
+    },
+    'jujlyjc1': {
+      'en': '',
+      'tl': '',
+    },
+    '7shiski3': {
+      'en': '',
+      'tl': '',
+    },
+    '4mm9v6co': {
+      'en': '',
+      'tl': '',
+    },
+    'pctrm65k': {
+      'en': '',
+      'tl': '',
+    },
+    'uuqablw3': {
+      'en': '',
+      'tl': '',
+    },
+    'v2f9u2qo': {
+      'en': '',
+      'tl': '',
+    },
+    'u46xyhue': {
+      'en': '',
+      'tl': '',
+    },
+    'zpud42yq': {
+      'en': '',
+      'tl': '',
+    },
+    'um0ve5ei': {
+      'en': '',
+      'tl': '',
+    },
+    'iaunue4f': {
+      'en': '',
+      'tl': '',
+    },
+    'j5g3rbb3': {
+      'en': '',
+      'tl': '',
+    },
+    'zox14hgo': {
+      'en': '',
+      'tl': '',
+    },
+    'xpwcqi5r': {
+      'en': '',
+      'tl': '',
+    },
+    'h92hznx8': {
+      'en': '',
+      'tl': '',
+    },
+    'ozz14i3c': {
+      'en': '',
+      'tl': '',
+    },
+    'td41c427': {
+      'en': '',
+      'tl': '',
+    },
+    '2wc15swr': {
+      'en': '',
+      'tl': '',
+    },
+  },
+].reduce((a, b) => a..addAll(b));

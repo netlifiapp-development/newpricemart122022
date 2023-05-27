@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
-import '../../backend/backend.dart';
+import '/backend/backend.dart';
+
 import '/backend/supabase/supabase.dart';
-import '../../auth/firebase_user_provider.dart';
+import '../../auth/base_auth_user_provider.dart';
 
 import '../../index.dart';
 import '../../main.dart';
@@ -20,8 +21,8 @@ export 'serialization_util.dart';
 const kTransitionInfoKey = '__transition_info__';
 
 class AppStateNotifier extends ChangeNotifier {
-  PricemartFirebaseUser? initialUser;
-  PricemartFirebaseUser? user;
+  BaseAuthUser? initialUser;
+  BaseAuthUser? user;
   bool showSplashImage = true;
   String? _redirectLocation;
 
@@ -46,7 +47,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(PricemartFirebaseUser newUser) {
+  void update(BaseAuthUser newUser) {
     initialUser ??= newUser;
     user = newUser;
     // Refresh the app on auth change unless explicitly marked otherwise.
@@ -69,13 +70,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? NavBarPage() : OnboardingWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : Onboard1Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : OnboardingWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : Onboard1Widget(),
         ),
         FFRoute(
           name: 'MenuPage',
@@ -86,7 +87,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CheckoutPage',
           path: '/checkoutPage',
           asyncParams: {
-            'cart': getDocList(['user_cart'], UserCartRecord.serializer),
+            'cart': getDocList(['user_cart'], UserCartRecord.fromSnapshot),
           },
           builder: (context, params) => CheckoutPageWidget(
             cart: params.getParam<UserCartRecord>(
@@ -134,51 +135,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Allorders',
-          path: '/allorders',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Allorders')
-              : AllordersWidget(),
+          name: 'Onboard1',
+          path: '/onboard1',
+          builder: (context, params) => Onboard1Widget(),
         ),
         FFRoute(
-          name: 'Payment',
-          path: '/payment',
-          asyncParams: {
-            'paynow': getDoc(['user_cart'], UserCartRecord.serializer),
-          },
-          builder: (context, params) => PaymentWidget(
-            paynow: params.getParam('paynow', ParamType.Document),
-          ),
-        ),
-        FFRoute(
-          name: 'Shipping',
-          path: '/shipping',
-          builder: (context, params) => ShippingWidget(),
-        ),
-        FFRoute(
-          name: 'Thankyou',
-          path: '/thankyou',
-          builder: (context, params) => ThankyouWidget(),
-        ),
-        FFRoute(
-          name: 'Onboarding',
-          path: '/onboarding',
-          builder: (context, params) => OnboardingWidget(),
-        ),
-        FFRoute(
-          name: 'Login',
-          path: '/login',
-          builder: (context, params) => LoginWidget(),
+          name: 'Onboard2',
+          path: '/onboard2',
+          builder: (context, params) => Onboard2Widget(),
         ),
         FFRoute(
           name: 'Register',
           path: '/register',
           builder: (context, params) => RegisterWidget(),
-        ),
-        FFRoute(
-          name: 'Forgotpassword',
-          path: '/forgotpassword',
-          builder: (context, params) => ForgotpasswordWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
@@ -314,7 +283,8 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam<T>(param, type, isList, collectionNamePath);
+    return deserializeParam<T>(param, type, isList,
+        collectionNamePath: collectionNamePath);
   }
 }
 
@@ -347,7 +317,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/onboarding';
+            return '/onboard1';
           }
           return null;
         },
@@ -363,7 +333,7 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/iPhone_11_Pro-X_-_2.png',
+                    'assets/images/iPhone_11_Pro-X_-_6.png',
                     fit: BoxFit.cover,
                   ),
                 )

@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/cart_item_widget.dart';
@@ -42,8 +42,8 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 160.ms,
-          begin: 1.0,
-          end: 1.1,
+          begin: Offset(1.0, 1.0),
+          end: Offset(1.1, 1.1),
         ),
       ],
     ),
@@ -83,13 +83,17 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
           mainAxisSize: MainAxisSize.max,
           children: [
             InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
               onTap: () async {
                 context.pushNamed('Home');
               },
               child: FaIcon(
                 FontAwesomeIcons.home,
                 color: FlutterFlowTheme.of(context).secondaryText,
-                size: 22.0,
+                size: 28.0,
               ),
             ),
             Padding(
@@ -117,7 +121,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                 size: 30.0,
               ),
               onPressed: () async {
-                context.pushNamed('Allorders');
+                context.pushNamed('Home');
               },
             ),
           ),
@@ -170,7 +174,9 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Cart',
+                                FFLocalizations.of(context).getText(
+                                  'pj16q0hq' /* Cart */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -273,6 +279,10 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                 ),
                               ),
                               InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
                                     'CheckoutPage',
@@ -312,35 +322,10 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                             width: 2.0,
                                           ),
                                         ),
-                                        child: InkWell(
-                                          onTap: () async {
-                                            context.pushNamed(
-                                              'CheckoutPage',
-                                              queryParams: {
-                                                'cart': serializeParam(
-                                                  containerUserCartRecordList,
-                                                  ParamType.Document,
-                                                  true,
-                                                ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                'cart':
-                                                    containerUserCartRecordList,
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType
-                                                          .bottomToTop,
-                                                ),
-                                              },
-                                            );
-                                          },
-                                          child: Icon(
-                                            Icons.shopping_cart_outlined,
-                                            color: Color(0xFF0E9134),
-                                            size: 24.0,
-                                          ),
+                                        child: Icon(
+                                          Icons.shopping_cart_outlined,
+                                          color: Color(0xFF0E9134),
+                                          size: 24.0,
                                         ),
                                       ),
                                     ),
@@ -440,7 +425,9 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 24.0),
                                       child: Text(
-                                        'Select your dishes from the menu below.',
+                                        FFLocalizations.of(context).getText(
+                                          'ju57bkqm' /* Select your dishes from the me... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -462,14 +449,30 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                               ),
                               FlutterFlowChoiceChips(
                                 options: [
-                                  ChipData('Recommended'),
-                                  ChipData('Veg'),
-                                  ChipData('Non Veg'),
-                                  ChipData('Sides'),
-                                  ChipData('Salads'),
-                                  ChipData('Beverages'),
-                                  ChipData('Desserts'),
-                                  ChipData('All')
+                                  ChipData(FFLocalizations.of(context).getText(
+                                    '4ltoyzso' /* Recommended */,
+                                  )),
+                                  ChipData(FFLocalizations.of(context).getText(
+                                    'feqeu2ey' /* Veg */,
+                                  )),
+                                  ChipData(FFLocalizations.of(context).getText(
+                                    'ah5gczy7' /* Non Veg */,
+                                  )),
+                                  ChipData(FFLocalizations.of(context).getText(
+                                    '6mmlsv7j' /* Sides */,
+                                  )),
+                                  ChipData(FFLocalizations.of(context).getText(
+                                    '57m8wlfg' /* Salads */,
+                                  )),
+                                  ChipData(FFLocalizations.of(context).getText(
+                                    '6hfyq9hn' /* Beverages */,
+                                  )),
+                                  ChipData(FFLocalizations.of(context).getText(
+                                    '1uwnv8rl' /* Desserts */,
+                                  )),
+                                  ChipData(FFLocalizations.of(context).getText(
+                                    'g199kzd0' /* All */,
+                                  ))
                                 ],
                                 onChanged: (val) => setState(
                                     () => _model.choiceChipsValue = val?.first),
@@ -518,9 +521,14 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                 multiselect: false,
                                 initialized: _model.choiceChipsValue != null,
                                 alignment: WrapAlignment.start,
-                                controller: _model.choiceChipsController ??=
-                                    FormFieldController<List<String>>(
-                                  ['All'],
+                                controller:
+                                    _model.choiceChipsValueController ??=
+                                        FormFieldController<List<String>>(
+                                  [
+                                    FFLocalizations.of(context).getText(
+                                      'ubcylpyh' /* All */,
+                                    )
+                                  ],
                                 ),
                               ),
                               FutureBuilder<List<AllprodsRow>>(
@@ -612,6 +620,41 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                                 ),
                                                           ),
                                                         ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      8.0),
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              columnAllprodsRow
+                                                                  .description,
+                                                              'Secribe',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .normal,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
                                                         Text(
                                                           valueOrDefault<
                                                               String>(
@@ -627,13 +670,12 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                                 fontFamily: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMediumFamily,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
+                                                                color: Color(
+                                                                    0xFF626C73),
                                                                 fontSize: 12.0,
                                                                 fontWeight:
                                                                     FontWeight
-                                                                        .w600,
+                                                                        .normal,
                                                                 useGoogleFonts: GoogleFonts
                                                                         .asMap()
                                                                     .containsKey(
@@ -678,8 +720,7 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
                                                               ),
                                                               width: 150.0,
                                                               height: 100.0,
-                                                              fit: BoxFit
-                                                                  .contain,
+                                                              fit: BoxFit.cover,
                                                             ),
                                                           ),
                                                         ),
@@ -731,7 +772,11 @@ class _MenuPageWidgetState extends State<MenuPageWidget>
 
                                                             setState(() {});
                                                           },
-                                                          text: 'Add',
+                                                          text: FFLocalizations
+                                                                  .of(context)
+                                                              .getText(
+                                                            'vpoe6lzh' /* Add */,
+                                                          ),
                                                           options:
                                                               FFButtonOptions(
                                                             width: 120.0,

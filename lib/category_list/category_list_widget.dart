@@ -57,6 +57,10 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
                 onTap: () async {
                   context.safePop();
                 },
@@ -69,7 +73,9 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Pricemart',
+                  FFLocalizations.of(context).getText(
+                    'wx23952f' /* Fast Delivery */,
+                  ),
                   style: FlutterFlowTheme.of(context).displaySmall.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).displaySmallFamily,
@@ -113,7 +119,9 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Text(
-                      ' ',
+                      FFLocalizations.of(context).getText(
+                        '25tnng7d' /*   */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodySmall,
                     ),
                   ],
@@ -151,75 +159,88 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                         return Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
-                          child: InkWell(
-                            onTap: () async {
-                              context.pushNamed(
-                                'ProductDetails',
-                                queryParams: {
-                                  'pdetails': serializeParam(
-                                    listViewAllprodsRow,
-                                    ParamType.SupabaseRow,
-                                  ),
-                                }.withoutNulls,
-                              );
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 3.0,
-                                    color: Color(0x411D2429),
-                                    offset: Offset(0.0, 1.0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 8.0, 8.0, 8.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 1.0, 1.0, 1.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(6.0),
-                                        child: Image.network(
-                                          listViewAllprodsRow.image!,
-                                          width: 80.0,
-                                          height: 80.0,
-                                          fit: BoxFit.contain,
-                                        ),
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 3.0,
+                                  color: Color(0x411D2429),
+                                  offset: Offset(0.0, 1.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 8.0, 8.0, 8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 1.0, 1.0, 1.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(6.0),
+                                      child: Image.network(
+                                        listViewAllprodsRow.image!,
+                                        width: 80.0,
+                                        height: 80.0,
+                                        fit: BoxFit.contain,
                                       ),
                                     ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 8.0, 4.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            AutoSizeText(
-                                              listViewAllprodsRow.title!,
-                                              maxLines: 2,
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 8.0, 4.0, 0.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          AutoSizeText(
+                                            listViewAllprodsRow.title!,
+                                            maxLines: 2,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
+                                                  fontSize: 14.0,
+                                                  fontWeight: FontWeight.normal,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily),
+                                                ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 4.0, 8.0, 0.0),
+                                            child: AutoSizeText(
+                                              listViewAllprodsRow.description!
+                                                  .maybeHandleOverflow(
+                                                maxChars: 70,
+                                                replacement: '…',
+                                              ),
+                                              textAlign: TextAlign.start,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .headlineSmall
+                                                      .bodySmall
                                                       .override(
                                                         fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineSmallFamily,
-                                                        fontSize: 14.0,
+                                                                .bodySmallFamily,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                         useGoogleFonts: GoogleFonts
@@ -227,60 +248,56 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                             .containsKey(
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .headlineSmallFamily),
+                                                                    .bodySmallFamily),
                                                       ),
                                             ),
-                                          ],
-                                        ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
-                                          child: Icon(
-                                            Icons.chevron_right_rounded,
-                                            color: Color(0xFF57636C),
-                                            size: 24.0,
-                                          ),
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 0.0, 0.0),
+                                        child: Icon(
+                                          Icons.chevron_right_rounded,
+                                          color: Color(0xFF57636C),
+                                          size: 24.0,
                                         ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 4.0, 8.0),
-                                          child: Text(
-                                            listViewAllprodsRow.price!,
-                                            textAlign: TextAlign.end,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .error,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 12.0, 4.0, 8.0),
+                                        child: Text(
+                                          listViewAllprodsRow.price!,
+                                          textAlign: TextAlign.end,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
                                         ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
                           ),

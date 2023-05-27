@@ -1,84 +1,117 @@
 import 'dart:async';
 
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'users_record.g.dart';
+class UsersRecord extends FirestoreRecord {
+  UsersRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
-  static Serializer<UsersRecord> get serializer => _$usersRecordSerializer;
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  bool hasEmail() => _email != null;
 
-  String? get email;
+  // "display_name" field.
+  String? _displayName;
+  String get displayName => _displayName ?? '';
+  bool hasDisplayName() => _displayName != null;
 
-  @BuiltValueField(wireName: 'display_name')
-  String? get displayName;
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
 
-  @BuiltValueField(wireName: 'photo_url')
-  String? get photoUrl;
+  // "uid" field.
+  String? _uid;
+  String get uid => _uid ?? '';
+  bool hasUid() => _uid != null;
 
-  String? get uid;
+  // "created_time" field.
+  DateTime? _createdTime;
+  DateTime? get createdTime => _createdTime;
+  bool hasCreatedTime() => _createdTime != null;
 
-  @BuiltValueField(wireName: 'created_time')
-  DateTime? get createdTime;
+  // "phone_number" field.
+  String? _phoneNumber;
+  String get phoneNumber => _phoneNumber ?? '';
+  bool hasPhoneNumber() => _phoneNumber != null;
 
-  @BuiltValueField(wireName: 'phone_number')
-  String? get phoneNumber;
+  // "City" field.
+  String? _city;
+  String get city => _city ?? '';
+  bool hasCity() => _city != null;
 
-  @BuiltValueField(wireName: 'City')
-  String? get city;
+  // "RefferralID" field.
+  int? _refferralID;
+  int get refferralID => _refferralID ?? 0;
+  bool hasRefferralID() => _refferralID != null;
 
-  @BuiltValueField(wireName: 'RefferralID')
-  int? get refferralID;
+  // "SponsorID" field.
+  int? _sponsorID;
+  int get sponsorID => _sponsorID ?? 0;
+  bool hasSponsorID() => _sponsorID != null;
 
-  @BuiltValueField(wireName: 'SponsorID')
-  int? get sponsorID;
+  // "CurrentBalance" field.
+  int? _currentBalance;
+  int get currentBalance => _currentBalance ?? 0;
+  bool hasCurrentBalance() => _currentBalance != null;
 
-  @BuiltValueField(wireName: 'CurrentBalance')
-  int? get currentBalance;
+  // "TotalRefferrals" field.
+  int? _totalRefferrals;
+  int get totalRefferrals => _totalRefferrals ?? 0;
+  bool hasTotalRefferrals() => _totalRefferrals != null;
 
-  @BuiltValueField(wireName: 'TotalRefferrals')
-  int? get totalRefferrals;
+  // "TotalRewards" field.
+  int? _totalRewards;
+  int get totalRewards => _totalRewards ?? 0;
+  bool hasTotalRewards() => _totalRewards != null;
 
-  @BuiltValueField(wireName: 'TotalRewards')
-  int? get totalRewards;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(UsersRecordBuilder builder) => builder
-    ..email = ''
-    ..displayName = ''
-    ..photoUrl = ''
-    ..uid = ''
-    ..phoneNumber = ''
-    ..city = ''
-    ..refferralID = 0
-    ..sponsorID = 0
-    ..currentBalance = 0
-    ..totalRefferrals = 0
-    ..totalRewards = 0;
+  void _initializeFields() {
+    _email = snapshotData['email'] as String?;
+    _displayName = snapshotData['display_name'] as String?;
+    _photoUrl = snapshotData['photo_url'] as String?;
+    _uid = snapshotData['uid'] as String?;
+    _createdTime = snapshotData['created_time'] as DateTime?;
+    _phoneNumber = snapshotData['phone_number'] as String?;
+    _city = snapshotData['City'] as String?;
+    _refferralID = snapshotData['RefferralID'] as int?;
+    _sponsorID = snapshotData['SponsorID'] as int?;
+    _currentBalance = snapshotData['CurrentBalance'] as int?;
+    _totalRefferrals = snapshotData['TotalRefferrals'] as int?;
+    _totalRewards = snapshotData['TotalRewards'] as int?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
 
-  static Stream<UsersRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<UsersRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => UsersRecord.fromSnapshot(s));
 
-  static Future<UsersRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<UsersRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => UsersRecord.fromSnapshot(s));
 
-  UsersRecord._();
-  factory UsersRecord([void Function(UsersRecordBuilder) updates]) =
-      _$UsersRecord;
+  static UsersRecord fromSnapshot(DocumentSnapshot snapshot) => UsersRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
 
   static UsersRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      UsersRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'UsersRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createUsersRecordData({
@@ -95,23 +128,21 @@ Map<String, dynamic> createUsersRecordData({
   int? totalRefferrals,
   int? totalRewards,
 }) {
-  final firestoreData = serializers.toFirestore(
-    UsersRecord.serializer,
-    UsersRecord(
-      (u) => u
-        ..email = email
-        ..displayName = displayName
-        ..photoUrl = photoUrl
-        ..uid = uid
-        ..createdTime = createdTime
-        ..phoneNumber = phoneNumber
-        ..city = city
-        ..refferralID = refferralID
-        ..sponsorID = sponsorID
-        ..currentBalance = currentBalance
-        ..totalRefferrals = totalRefferrals
-        ..totalRewards = totalRewards,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'email': email,
+      'display_name': displayName,
+      'photo_url': photoUrl,
+      'uid': uid,
+      'created_time': createdTime,
+      'phone_number': phoneNumber,
+      'City': city,
+      'RefferralID': refferralID,
+      'SponsorID': sponsorID,
+      'CurrentBalance': currentBalance,
+      'TotalRefferrals': totalRefferrals,
+      'TotalRewards': totalRewards,
+    }.withoutNulls,
   );
 
   return firestoreData;

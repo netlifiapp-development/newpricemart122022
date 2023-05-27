@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -64,7 +64,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
             },
           ),
           title: Text(
-            'Profile',
+            FFLocalizations.of(context).getText(
+              '1hmqaedy' /* Profile */,
+            ),
             style: FlutterFlowTheme.of(context).titleSmall,
           ),
           actions: [],
@@ -72,6 +74,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           elevation: 0.0,
         ),
         body: SafeArea(
+          top: true,
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -171,7 +174,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                   child: Text(
-                    'Account',
+                    FFLocalizations.of(context).getText(
+                      'wdkdczy8' /* Account */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleSmall,
                   ),
                 ),
@@ -208,7 +213,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'My Orders',
+                              FFLocalizations.of(context).getText(
+                                'lq8kmhdk' /* My Orders */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -261,7 +268,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Rewards',
+                              FFLocalizations.of(context).getText(
+                                'ofv1x6yl' /* Rewards */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -314,7 +323,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Unilevel Rewards',
+                              FFLocalizations.of(context).getText(
+                                '23w7zifc' /* Unilevel Rewards */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -338,6 +349,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                   child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onTap: () async {
                       context.pushNamed('Updateprofile');
                     },
@@ -371,7 +386,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Edit Profile',
+                                FFLocalizations.of(context).getText(
+                                  'g5r02dd0' /* Edit Profile */,
+                                ),
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ),
@@ -395,7 +412,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                   child: Text(
-                    'General',
+                    FFLocalizations.of(context).getText(
+                      'b7zsjob6' /* General */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleSmall,
                   ),
                 ),
@@ -432,7 +451,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Send Qr Code',
+                              FFLocalizations.of(context).getText(
+                                'hfkyjsmg' /* Send Qr Code */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -485,7 +506,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Invite Friends',
+                              FFLocalizations.of(context).getText(
+                                'hj6owimh' /* Invite Friends */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -509,12 +532,16 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   padding:
                       EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 15.0),
                   child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onTap: () async {
                       GoRouter.of(context).prepareAuthEvent();
-                      await signOut();
+                      await authManager.signOut();
                       GoRouter.of(context).clearRedirectLocation();
 
-                      context.pushNamedAuth('Login', mounted);
+                      context.pushNamedAuth('Register', context.mounted);
                     },
                     child: Container(
                       width: double.infinity,
@@ -541,7 +568,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Logout',
+                                FFLocalizations.of(context).getText(
+                                  'lr2c6l4o' /* Logout */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(

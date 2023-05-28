@@ -198,97 +198,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'tl': '',
     },
   },
-  // CategoryList
-  {
-    'wx23952f': {
-      'en': 'All Items',
-      'tl': '',
-    },
-    '25tnng7d': {
-      'en': ' ',
-      'tl': '',
-    },
-    'iww1o40f': {
-      'en': 'Pieces/Kg',
-      'tl': '',
-    },
-    'gjyf4nkg': {
-      'en': 'Title',
-      'tl': '',
-    },
-    'izcjx4ym': {
-      'en': 'Subtext',
-      'tl': '',
-    },
-    'v9yz5wzm': {
-      'en': '\$11.00',
-      'tl': '',
-    },
-    'fzesp3p0': {
-      'en': 'Title',
-      'tl': '',
-    },
-    'fk2gpzbf': {
-      'en': 'Subtext',
-      'tl': '',
-    },
-    '5h2hnamx': {
-      'en': '\$11.00',
-      'tl': '',
-    },
-    '8zwtixlf': {
-      'en': 'Title',
-      'tl': '',
-    },
-    'p3rd10rf': {
-      'en': 'Subtext',
-      'tl': '',
-    },
-    'cbee3amh': {
-      'en': '\$11.00',
-      'tl': '',
-    },
-    'c20nkebf': {
-      'en': 'Title',
-      'tl': '',
-    },
-    'srdh8cnm': {
-      'en': 'Subtext',
-      'tl': '',
-    },
-    'v7cercwl': {
-      'en': '\$11.00',
-      'tl': '',
-    },
-    'lq9wwnfp': {
-      'en': 'Title',
-      'tl': '',
-    },
-    'dgc65mcv': {
-      'en': 'Subtext',
-      'tl': '',
-    },
-    'xed5b22a': {
-      'en': '\$11.00',
-      'tl': '',
-    },
-    'p3eyn109': {
-      'en': 'Title',
-      'tl': '',
-    },
-    'mkofzi2r': {
-      'en': 'Subtext',
-      'tl': '',
-    },
-    '7082jt6f': {
-      'en': '\$11.00',
-      'tl': '',
-    },
-    'z97600pt': {
-      'en': 'Category',
-      'tl': '',
-    },
-  },
   // Profile
   {
     'wdkdczy8': {
@@ -569,33 +478,156 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // ForgotPassword
   {
-    'cy1mmm44': {
+    'n4ikrup5': {
       'en': 'Back',
       'tl': '',
     },
-    'f9yn4ry8': {
+    '0gk7ij8n': {
       'en': 'Forgot Password',
       'tl': '',
     },
-    'mmdvea6p': {
+    'hzsinlpt': {
       'en':
           'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
       'tl': '',
     },
-    'stfdw0oc': {
+    'ew41vfk2': {
       'en': 'Your email address...',
       'tl': '',
     },
-    '3dwvnoso': {
+    'r3ub4p93': {
       'en': 'Enter your email...',
       'tl': '',
     },
-    'mr3ojksv': {
+    'pexle4lo': {
       'en': 'Send Link',
       'tl': '',
     },
-    'c3580ujq': {
+    'oqvzuxku': {
       'en': 'Home',
+      'tl': '',
+    },
+  },
+  // CategoryList
+  {
+    'xgg3i1vr': {
+      'en': 'Search for your groceries...',
+      'tl': '',
+    },
+    '29pzy2ey': {
+      'en': 'Snacks',
+      'tl': '',
+    },
+    'if718tx1': {
+      'en': 'Categories',
+      'tl': '',
+    },
+    'xyqvavy4': {
+      'en': 'Limited Edition',
+      'tl': '',
+    },
+    'xrwel27c': {
+      'en': 'Outerwear',
+      'tl': '',
+    },
+    'mddlyib6': {
+      'en': 'Pants',
+      'tl': '',
+    },
+    '3q8ir85g': {
+      'en': 'Shorts Sporty',
+      'tl': '',
+    },
+    '7bek1n1a': {
+      'en': 'Shorts Casual',
+      'tl': '',
+    },
+    'qxq0jmc2': {
+      'en': 'Casual Tees',
+      'tl': '',
+    },
+    'icnn20lf': {
+      'en': 'Shoes',
+      'tl': '',
+    },
+    'wk0r6yot': {
+      'en': 'Dairy',
+      'tl': '',
+    },
+    'xua1rx42': {
+      'en': 'Categories',
+      'tl': '',
+    },
+    '4x9ek4yu': {
+      'en': 'Limited Edition',
+      'tl': '',
+    },
+    'y2lxe8rl': {
+      'en': 'Outerwear',
+      'tl': '',
+    },
+    'lwdc9gzk': {
+      'en': 'Pants',
+      'tl': '',
+    },
+    'w500y8kw': {
+      'en': 'Shorts Sporty',
+      'tl': '',
+    },
+    'pon482yh': {
+      'en': 'Shorts Casual',
+      'tl': '',
+    },
+    '67ffy46k': {
+      'en': 'Casual Tees',
+      'tl': '',
+    },
+    'usqmn0aa': {
+      'en': 'Shoes',
+      'tl': '',
+    },
+    'g00hi03h': {
+      'en': 'Personal Care',
+      'tl': '',
+    },
+    'z3py46bw': {
+      'en': 'Categories',
+      'tl': '',
+    },
+    '8azp7euz': {
+      'en': 'Outerwear',
+      'tl': '',
+    },
+    'qzvf1byc': {
+      'en': 'Pants',
+      'tl': '',
+    },
+    '84ubctw9': {
+      'en': 'Shorts Sporty',
+      'tl': '',
+    },
+    'kxuvyg6v': {
+      'en': 'Shorts Casual',
+      'tl': '',
+    },
+    'u28uqyue': {
+      'en': 'Casual Tees',
+      'tl': '',
+    },
+    'igz1evtn': {
+      'en': 'Limited Edition',
+      'tl': '',
+    },
+    'ucss1e4f': {
+      'en': 'Shoes',
+      'tl': '',
+    },
+    '129hmis3': {
+      'en': 'Categories',
+      'tl': '',
+    },
+    'bg7fbx9r': {
+      'en': 'Shop',
       'tl': '',
     },
   },

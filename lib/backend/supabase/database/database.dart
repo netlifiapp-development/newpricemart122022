@@ -6,6 +6,5 @@ export 'row.dart';
 export 'table.dart';
 
 export 'tables/cityname.dart';
-export 'tables/banners.dart';
+export 'tables/users_order.dart';
 export 'tables/products.dart';
-export 'tables/category.dart';

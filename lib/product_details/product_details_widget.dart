@@ -180,12 +180,19 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 children: [
                   FFButtonWidget(
                     onPressed: () async {
-                      final userCartCreateData = createUserCartRecordData();
+                      final userCartCreateData = createUserCartRecordData(
+                        name: widget.pdetails?.name,
+                        price: widget.pdetails?.price,
+                        image: widget.pdetails?.image,
+                        user: currentUserReference,
+                      );
                       var userCartRecordReference =
                           UserCartRecord.collection.doc();
                       await userCartRecordReference.set(userCartCreateData);
-                      _model.order = UserCartRecord.getDocumentFromData(
+                      _model.neworder = UserCartRecord.getDocumentFromData(
                           userCartCreateData, userCartRecordReference);
+
+                      context.pushNamed('MenuPage');
 
                       setState(() {});
                     },

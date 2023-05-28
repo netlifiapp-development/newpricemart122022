@@ -102,10 +102,10 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.network(
-                        _model.orderstoot!.image,
-                        width: MediaQuery.of(context).size.width * 0.96,
-                        height: 40.0,
-                        fit: BoxFit.cover,
+                        widget.pdetails!.image!,
+                        width: MediaQuery.of(context).size.width * 1.0,
+                        height: 100.0,
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
@@ -119,7 +119,11 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 children: [
                   Expanded(
                     child: Text(
-                      _model.orderstoot!.name,
+                      valueOrDefault<String>(
+                        widget.pdetails?.name,
+                        'Egg',
+                      ).maybeHandleOverflow(maxChars: 10),
+                      maxLines: 1,
                       style: FlutterFlowTheme.of(context).headlineSmall,
                     ),
                   ),
@@ -133,7 +137,10 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    _model.orderstoot!.price,
+                    valueOrDefault<String>(
+                      widget.pdetails?.price,
+                      '100',
+                    ),
                     textAlign: TextAlign.end,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Lexend Deca',
@@ -155,8 +162,9 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 children: [
                   Expanded(
                     child: Text(
-                      FFLocalizations.of(context).getText(
-                        'f8zv1gk4' /* Sporty style from the archives... */,
+                      valueOrDefault<String>(
+                        widget.pdetails?.name,
+                        'Description',
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall,
                     ),
@@ -171,14 +179,21 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      final userCartCreateData = createUserCartRecordData();
+                      var userCartRecordReference =
+                          UserCartRecord.collection.doc();
+                      await userCartRecordReference.set(userCartCreateData);
+                      _model.order = UserCartRecord.getDocumentFromData(
+                          userCartCreateData, userCartRecordReference);
+
+                      setState(() {});
                     },
                     text: FFLocalizations.of(context).getText(
                       'wj1zx3ex' /* Add to Cart */,
                     ),
                     options: FFButtonOptions(
-                      width: 170.0,
+                      width: 158.0,
                       height: 50.0,
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
@@ -200,6 +215,13 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                         color: Colors.transparent,
                         width: 1.0,
                       ),
+                    ),
+                  ),
+                  Container(
+                    width: 20.0,
+                    height: 20.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                   ),
                   FFButtonWidget(
@@ -239,7 +261,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
                       'f2bjqevp' /* Order Now */,
                     ),
                     options: FFButtonOptions(
-                      width: 170.0,
+                      width: 159.0,
                       height: 50.0,
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),

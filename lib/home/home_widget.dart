@@ -1,6 +1,4 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -56,74 +54,68 @@ class _HomeWidgetState extends State<HomeWidget> {
           automaticallyImplyLeading: false,
           title: Row(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 15.0),
-                child: FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 30.0,
-                  borderWidth: 1.0,
-                  buttonSize: 40.0,
-                  icon: Icon(
-                    Icons.my_location,
-                    color: FlutterFlowTheme.of(context).error,
-                    size: 30.0,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                    child: Container(
+                      width: 50.0,
+                      height: 50.0,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: CachedNetworkImage(
+                        imageUrl:
+                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/homeecom-0r27cc/assets/39iux4y9lgvc/Untitled_design.png',
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
-                  },
-                ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      width: 100.0,
+                      height: 40.0,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ],
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                child: AuthUserStreamWidget(
-                  builder: (context) => Text(
-                    'is in ${valueOrDefault<String>(
-                      valueOrDefault(currentUserDocument?.city, ''),
-                      'Pasig City',
-                    )}',
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    FFLocalizations.of(context).getText(
+                      'gvhycfsv' /* Pasig City */,
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily:
-                              FlutterFlowTheme.of(context).headlineMediumFamily,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          fontSize: 16.0,
+                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                          fontSize: 12.0,
                           fontWeight: FontWeight.w500,
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context)
-                                  .headlineMediumFamily),
+                              FlutterFlowTheme.of(context).bodyMediumFamily),
                         ),
                   ),
-                ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                    child: Icon(
+                      Icons.location_on,
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      size: 30.0,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-          actions: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 15.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('MenuPage');
-                },
-                child: Container(
-                  width: 40.0,
-                  height: 40.0,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: CachedNetworkImage(
-                    imageUrl:
-                        'https://usrtbrpwgfmsyrnrlxnp.supabase.co/storage/v1/object/public/product_images/Untitled%20design%20(1).png',
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-            ),
-          ],
+          actions: [],
           centerTitle: false,
           toolbarHeight: 75.0,
         ),
@@ -266,7 +258,28 @@ class _HomeWidgetState extends State<HomeWidget> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10.0),
                               child: Image.asset(
-                                'assets/images/Green_Organic_Grocery_Store_Youtube_Video.gif',
+                                'assets/images/Green_Organic_Grocery_Store_Youtube_Video_(1).png',
+                                width: 230.0,
+                                height: 175.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 0.0, 0.0),
+                          child: Container(
+                            width: 316.0,
+                            height: 166.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.asset(
+                                'assets/images/open.png',
                                 width: 250.0,
                                 height: 200.0,
                                 fit: BoxFit.cover,
@@ -287,28 +300,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10.0),
                               child: Image.asset(
-                                'assets/images/banner2.gif',
-                                width: 250.0,
-                                height: 200.0,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 0.0, 0.0),
-                          child: Container(
-                            width: 316.0,
-                            height: 166.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                'assets/images/banner3.gif',
+                                'assets/images/Green_Organic_Vegetables_Video_(1).png',
                                 width: 250.0,
                                 height: 200.0,
                                 fit: BoxFit.cover,
@@ -823,127 +815,148 @@ class _HomeWidgetState extends State<HomeWidget> {
                       return Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 8.0),
-                        child: Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 3.0,
-                                color: Color(0x411D2429),
-                                offset: Offset(0.0, 1.0),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 8.0, 8.0, 8.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 1.0, 1.0, 1.0),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(6.0),
-                                    child: Image.network(
-                                      columnProductsRow.image!,
-                                      width: 80.0,
-                                      height: 80.0,
-                                      fit: BoxFit.contain,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(
+                              'ProductDetails',
+                              queryParams: {
+                                'pdetails': serializeParam(
+                                  columnProductsRow,
+                                  ParamType.SupabaseRow,
+                                ),
+                              }.withoutNulls,
+                            );
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 3.0,
+                                  color: Color(0x411D2429),
+                                  offset: Offset(0.0, 1.0),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 8.0, 8.0, 8.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 1.0, 1.0, 1.0),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(6.0),
+                                      child: Image.network(
+                                        columnProductsRow.image!,
+                                        width: 80.0,
+                                        height: 80.0,
+                                        fit: BoxFit.contain,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 8.0, 4.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        AutoSizeText(
-                                          columnProductsRow.name!
-                                              .maybeHandleOverflow(maxChars: 8),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 8.0, 4.0, 0.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          AutoSizeText(
+                                            columnProductsRow.name!
+                                                .maybeHandleOverflow(
+                                                    maxChars: 8),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .headlineSmallFamily,
+                                                  fontSize: 18.0,
+                                                  fontWeight: FontWeight.normal,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmallFamily),
+                                                ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 4.0, 8.0, 0.0),
+                                            child: AutoSizeText(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '5lsuz2d9' /* Points: 1 */,
+                                              ),
+                                              textAlign: TextAlign.start,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 4.0, 0.0, 0.0),
+                                        child: Icon(
+                                          Icons.chevron_right_rounded,
+                                          color: Color(0xFF57636C),
+                                          size: 24.0,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 12.0, 4.0, 8.0),
+                                        child: Text(
+                                          columnProductsRow.price!,
+                                          textAlign: TextAlign.end,
                                           style: FlutterFlowTheme.of(context)
-                                              .headlineSmall
+                                              .bodyMedium
                                               .override(
                                                 fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .headlineSmallFamily,
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.normal,
+                                                        .bodyMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
-                                                    .containsKey(FlutterFlowTheme
-                                                            .of(context)
-                                                        .headlineSmallFamily),
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
                                               ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 8.0, 0.0),
-                                          child: AutoSizeText(
-                                            FFLocalizations.of(context).getText(
-                                              '5lsuz2d9' /* Points: 1 */,
-                                            ),
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 4.0, 0.0, 0.0),
-                                      child: Icon(
-                                        Icons.chevron_right_rounded,
-                                        color: Color(0xFF57636C),
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 4.0, 8.0),
-                                      child: Text(
-                                        columnProductsRow.price!,
-                                        textAlign: TextAlign.end,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),

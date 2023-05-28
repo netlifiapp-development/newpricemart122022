@@ -193,6 +193,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Points: 1',
       'tl': '',
     },
+    'gvhycfsv': {
+      'en': 'Pasig City',
+      'tl': '',
+    },
     'qt6r0d9e': {
       'en': 'Home',
       'tl': '',
@@ -284,11 +288,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'p41cdb29': {
       'en': 'Back to Products',
-      'tl': '',
-    },
-    'f8zv1gk4': {
-      'en':
-          'Sporty style from the archives inspires this iconic track top. A stand-up collar and the signature sheen of tricot give it a retro vibe. Made for relaxing between sessions, the full-zip jacket has a recycled polyester build.',
       'tl': '',
     },
     'wj1zx3ex': {
@@ -478,140 +477,223 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // ForgotPassword
   {
-    'rfbd92d8': {
+    'xnhp0ntz': {
       'en': 'Back',
       'tl': '',
     },
-    'thanlsgb': {
+    'pedvuqaj': {
       'en': 'Forgot Password',
       'tl': '',
     },
-    'hxyj4e0v': {
+    'ejfvhghn': {
       'en':
           'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
       'tl': '',
     },
-    'xng8e052': {
+    'zao5s6i5': {
       'en': 'Your email address...',
       'tl': '',
     },
-    'qj1v7s3u': {
+    '421aumr7': {
       'en': 'Enter your email...',
       'tl': '',
     },
-    'lqz3gfz1': {
+    'z1zt6mcy': {
       'en': 'Send Link',
       'tl': '',
     },
-    'wg36svrb': {
+    'asrrak4s': {
       'en': 'Home',
       'tl': '',
     },
   },
   // CategoryList
   {
-    'hkit4ep7': {
+    '8g1qb8tu': {
       'en': 'Snacks',
       'tl': '',
     },
-    'ontfjhn9': {
+    'if34mfi9': {
       'en': 'Limited Edition',
       'tl': '',
     },
-    'luqytlm3': {
+    'aq1o9n44': {
       'en': 'Outerwear',
       'tl': '',
     },
-    '0h1tytoy': {
+    '79kp9i80': {
       'en': 'Pants',
       'tl': '',
     },
-    'zefk8doo': {
+    '0p08uqpi': {
       'en': 'Shorts Sporty',
       'tl': '',
     },
-    'arr6v7lw': {
+    'vz6ovzxk': {
       'en': 'Shorts Casual',
       'tl': '',
     },
-    'wzg8c6t5': {
+    'h26o94ia': {
       'en': 'Casual Tees',
       'tl': '',
     },
-    'urvauez2': {
+    '7a32hxam': {
       'en': 'Shoes',
       'tl': '',
     },
-    'u0ql0o21': {
+    'rxf6vjgu': {
       'en': 'Dairy',
       'tl': '',
     },
-    'dofyava9': {
+    'ek6xzmq7': {
       'en': 'Limited Edition',
       'tl': '',
     },
-    '60ewid9k': {
+    'fqtp3mfs': {
       'en': 'Outerwear',
       'tl': '',
     },
-    'pln7jnwx': {
+    '6cghxdzt': {
       'en': 'Pants',
       'tl': '',
     },
-    'gwczwxld': {
+    'fmevfhly': {
       'en': 'Shorts Sporty',
       'tl': '',
     },
-    'h0sk76o3': {
+    '7up6zz2m': {
       'en': 'Shorts Casual',
       'tl': '',
     },
-    'mo4t138g': {
+    'vn0xb6ka': {
       'en': 'Casual Tees',
       'tl': '',
     },
-    'ojw0zxd5': {
+    'iqxjpak2': {
       'en': 'Shoes',
       'tl': '',
     },
-    '8j6umquk': {
+    '8wttf1rr': {
       'en': 'Personal Care',
       'tl': '',
     },
-    'jkd5m1zv': {
+    'tjsffpo3': {
       'en': 'Outerwear',
       'tl': '',
     },
-    'pxx8fjye': {
+    'z5g9wl47': {
       'en': 'Pants',
       'tl': '',
     },
-    'llj314ld': {
+    'a3t6qzbo': {
       'en': 'Shorts Sporty',
       'tl': '',
     },
-    'uj75nme6': {
+    'wpzlb47n': {
       'en': 'Shorts Casual',
       'tl': '',
     },
-    'ghdhzkjx': {
+    'ai6uega5': {
       'en': 'Casual Tees',
       'tl': '',
     },
-    'aag4er8i': {
+    'qd36xswy': {
       'en': 'Limited Edition',
       'tl': '',
     },
-    'kx3a1cbh': {
+    '5tqgv23b': {
       'en': 'Shoes',
       'tl': '',
     },
-    'ufpvl6yj': {
-      'en': 'Categories',
+    '2mmsw0c3': {
+      'en': 'All Categories',
       'tl': '',
     },
-    '1ous5hvn': {
+    '7wm1nlja': {
       'en': 'Category',
+      'tl': '',
+    },
+  },
+  // Mycart
+  {
+    '5dp1c5qj': {
+      'en': 'Below are the items in your cart.',
+      'tl': '',
+    },
+    'untwbd6u': {
+      'en': 'AirMax Low',
+      'tl': '',
+    },
+    'ngxyjb1u': {
+      'en': '\$120.00',
+      'tl': '',
+    },
+    'dohs28uh': {
+      'en': 'Quanity: 1',
+      'tl': '',
+    },
+    '3ugxhqjd': {
+      'en': 'Zion 1',
+      'tl': '',
+    },
+    '2zog1rma': {
+      'en': '\$120.00',
+      'tl': '',
+    },
+    '44niltz1': {
+      'en': 'Quanity: 1',
+      'tl': '',
+    },
+    'jvpvg9o0': {
+      'en': 'Jumpsuit',
+      'tl': '',
+    },
+    'tcdlhzse': {
+      'en': '\$120.00',
+      'tl': '',
+    },
+    '9j2b9l7f': {
+      'en': 'Quanity: 1',
+      'tl': '',
+    },
+    'fp0m058u': {
+      'en': 'Price Breakdown',
+      'tl': '',
+    },
+    'ditay4jl': {
+      'en': 'Base Price',
+      'tl': '',
+    },
+    'xxxeo04x': {
+      'en': '\$120.00',
+      'tl': '',
+    },
+    'spccvu5p': {
+      'en': 'Taxes',
+      'tl': '',
+    },
+    'bx4sx2v9': {
+      'en': '\$12.25',
+      'tl': '',
+    },
+    'vmmmfpcl': {
+      'en': 'Total',
+      'tl': '',
+    },
+    'uec8irkr': {
+      'en': '\$137.75',
+      'tl': '',
+    },
+    'xtpqn45n': {
+      'en': 'Checkout (\$137.75)',
+      'tl': '',
+    },
+    'o0hgrd9u': {
+      'en': 'My Cart',
+      'tl': '',
+    },
+    'spa2sx3v': {
+      'en': 'Home',
       'tl': '',
     },
   },

@@ -151,6 +151,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'CategoryList')
               : CategoryListWidget(),
+        ),
+        FFRoute(
+          name: 'Mycart',
+          path: '/mycart',
+          builder: (context, params) => MycartWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

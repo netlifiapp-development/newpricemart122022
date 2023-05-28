@@ -80,7 +80,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'rfbd92d8' /* Back */,
+                          'xnhp0ntz' /* Back */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).displaySmall.override(
@@ -98,7 +98,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          'thanlsgb' /* Forgot Password */,
+                          'pedvuqaj' /* Forgot Password */,
                         ),
                         style:
                             FlutterFlowTheme.of(context).displaySmall.override(
@@ -134,7 +134,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        'hxyj4e0v' /* We will send you an email with... */,
+                        'ejfvhghn' /* We will send you an email with... */,
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall,
                     ),
@@ -166,11 +166,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: FFLocalizations.of(context).getText(
-                      'xng8e052' /* Your email address... */,
+                      'zao5s6i5' /* Your email address... */,
                     ),
                     labelStyle: FlutterFlowTheme.of(context).bodySmall,
                     hintText: FFLocalizations.of(context).getText(
-                      'qj1v7s3u' /* Enter your email... */,
+                      '421aumr7' /* Enter your email... */,
                     ),
                     hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Lexend Deca',
@@ -241,7 +241,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 );
               },
               text: FFLocalizations.of(context).getText(
-                'lqz3gfz1' /* Send Link */,
+                'z1zt6mcy' /* Send Link */,
               ),
               options: FFButtonOptions(
                 width: 270.0,

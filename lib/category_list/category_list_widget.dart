@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -47,36 +46,51 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: FlutterFlowTheme.of(context).primaryText,
-              size: 30.0,
+          title: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  FFLocalizations.of(context).getText(
+                    '2mmsw0c3' /* All Categories */,
+                  ),
+                  style: FlutterFlowTheme.of(context).titleLarge.override(
+                        fontFamily:
+                            FlutterFlowTheme.of(context).titleLargeFamily,
+                        fontSize: 18.0,
+                        useGoogleFonts: GoogleFonts.asMap().containsKey(
+                            FlutterFlowTheme.of(context).titleLargeFamily),
+                      ),
+                ),
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.safePop();
+                  },
+                  child: Icon(
+                    Icons.close,
+                    color: FlutterFlowTheme.of(context).secondaryText,
+                    size: 24.0,
+                  ),
+                ),
+              ],
             ),
-            onPressed: () async {
-              context.safePop();
-            },
-          ),
-          title: Text(
-            FFLocalizations.of(context).getText(
-              'ufpvl6yj' /* Categories */,
-            ),
-            style: FlutterFlowTheme.of(context).titleLarge,
           ),
           actions: [],
           centerTitle: false,
-          elevation: 0.0,
+          elevation: 1.0,
         ),
-        body: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Expanded(
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+        body: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(
                 child: DefaultTabController(
                   length: 3,
                   initialIndex: 0,
@@ -87,13 +101,34 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                         child: FlutterFlowButtonTabBar(
                           useToggleButtonStyle: false,
                           isScrollable: true,
-                          labelStyle: FlutterFlowTheme.of(context).titleMedium,
-                          unselectedLabelStyle:
-                              FlutterFlowTheme.of(context).titleMedium,
-                          labelColor: FlutterFlowTheme.of(context).alternate,
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleMediumFamily,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.normal,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleMediumFamily),
+                              ),
+                          unselectedLabelStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .titleMediumFamily,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.normal,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .titleMediumFamily),
+                              ),
+                          labelColor:
+                              FlutterFlowTheme.of(context).primaryBackground,
                           unselectedLabelColor:
-                              FlutterFlowTheme.of(context).secondaryText,
-                          backgroundColor: FlutterFlowTheme.of(context).accent1,
+                              FlutterFlowTheme.of(context).alternate,
+                          backgroundColor:
+                              FlutterFlowTheme.of(context).secondary,
                           borderColor: FlutterFlowTheme.of(context).primary,
                           borderWidth: 2.0,
                           borderRadius: 12.0,
@@ -107,17 +142,17 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                           tabs: [
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                'hkit4ep7' /* Snacks */,
+                                '8g1qb8tu' /* Snacks */,
                               ),
                             ),
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                'u0ql0o21' /* Dairy */,
+                                'rxf6vjgu' /* Dairy */,
                               ),
                             ),
                             Tab(
                               text: FFLocalizations.of(context).getText(
-                                '8j6umquk' /* Personal Care */,
+                                '8wttf1rr' /* Personal Care */,
                               ),
                             ),
                           ],
@@ -171,7 +206,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ontfjhn9' /* Limited Edition */,
+                                                    'if34mfi9' /* Limited Edition */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -220,7 +255,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'luqytlm3' /* Outerwear */,
+                                                    'aq1o9n44' /* Outerwear */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -269,7 +304,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '0h1tytoy' /* Pants */,
+                                                    '79kp9i80' /* Pants */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -318,7 +353,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'zefk8doo' /* Shorts Sporty */,
+                                                    '0p08uqpi' /* Shorts Sporty */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -367,7 +402,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'arr6v7lw' /* Shorts Casual */,
+                                                    'vz6ovzxk' /* Shorts Casual */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -416,7 +451,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'wzg8c6t5' /* Casual Tees */,
+                                                    'h26o94ia' /* Casual Tees */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -465,7 +500,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'urvauez2' /* Shoes */,
+                                                    '7a32hxam' /* Shoes */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -526,7 +561,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'dofyava9' /* Limited Edition */,
+                                                    'ek6xzmq7' /* Limited Edition */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -575,7 +610,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '60ewid9k' /* Outerwear */,
+                                                    'fqtp3mfs' /* Outerwear */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -624,7 +659,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'pln7jnwx' /* Pants */,
+                                                    '6cghxdzt' /* Pants */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -673,7 +708,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'gwczwxld' /* Shorts Sporty */,
+                                                    'fmevfhly' /* Shorts Sporty */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -722,7 +757,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'h0sk76o3' /* Shorts Casual */,
+                                                    '7up6zz2m' /* Shorts Casual */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -771,7 +806,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'mo4t138g' /* Casual Tees */,
+                                                    'vn0xb6ka' /* Casual Tees */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -820,7 +855,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ojw0zxd5' /* Shoes */,
+                                                    'iqxjpak2' /* Shoes */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -881,7 +916,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'jkd5m1zv' /* Outerwear */,
+                                                    'tjsffpo3' /* Outerwear */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -930,7 +965,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'pxx8fjye' /* Pants */,
+                                                    'z5g9wl47' /* Pants */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -979,7 +1014,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'llj314ld' /* Shorts Sporty */,
+                                                    'a3t6qzbo' /* Shorts Sporty */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1028,7 +1063,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'uj75nme6' /* Shorts Casual */,
+                                                    'wpzlb47n' /* Shorts Casual */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1077,7 +1112,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ghdhzkjx' /* Casual Tees */,
+                                                    'ai6uega5' /* Casual Tees */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1126,7 +1161,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'aag4er8i' /* Limited Edition */,
+                                                    'qd36xswy' /* Limited Edition */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1175,7 +1210,7 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'kx3a1cbh' /* Shoes */,
+                                                    '5tqgv23b' /* Shoes */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1198,8 +1233,8 @@ class _CategoryListWidgetState extends State<CategoryListWidget> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

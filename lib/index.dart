@@ -11,3 +11,4 @@ export '/register/register_widget.dart' show RegisterWidget;
 export '/product_list/product_list_widget.dart' show ProductListWidget;
 export '/forgot_password/forgot_password_widget.dart' show ForgotPasswordWidget;
 export '/category_list/category_list_widget.dart' show CategoryListWidget;
+export '/mycart/mycart_widget.dart' show MycartWidget;

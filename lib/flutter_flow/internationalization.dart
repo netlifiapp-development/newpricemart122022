@@ -193,7 +193,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Points: 1',
       'tl': '',
     },
-    'm3xsmyue': {
+    'cl4jc7xx': {
       'en': 'Pasig City',
       'tl': '',
     },

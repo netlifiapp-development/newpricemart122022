@@ -124,6 +124,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Home': HomeWidget(),
       'Profile': ProfileWidget(),
+      'CategoryList': CategoryListWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -159,6 +160,16 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             label: FFLocalizations.of(context).getText(
               '1hz353o6' /* Profile */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.format_list_bulleted_rounded,
+              size: 22.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              '1ous5hvn' /* Category */,
             ),
             tooltip: '',
           )

@@ -7,19 +7,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class CategoryListModel extends FlutterFlowModel {
-  ///  State fields for stateful widgets in this page.
-
-  // State field(s) for searchBar widget.
-  TextEditingController? searchBarController;
-  String? Function(BuildContext, String?)? searchBarControllerValidator;
-
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
-  void dispose() {
-    searchBarController?.dispose();
-  }
+  void dispose() {}
 
   /// Additional helper methods are added here.
 

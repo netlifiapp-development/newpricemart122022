@@ -478,156 +478,140 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // ForgotPassword
   {
-    'n4ikrup5': {
+    'rfbd92d8': {
       'en': 'Back',
       'tl': '',
     },
-    '0gk7ij8n': {
+    'thanlsgb': {
       'en': 'Forgot Password',
       'tl': '',
     },
-    'hzsinlpt': {
+    'hxyj4e0v': {
       'en':
           'We will send you an email with a link to reset your password, please enter the email associated with your account below.',
       'tl': '',
     },
-    'ew41vfk2': {
+    'xng8e052': {
       'en': 'Your email address...',
       'tl': '',
     },
-    'r3ub4p93': {
+    'qj1v7s3u': {
       'en': 'Enter your email...',
       'tl': '',
     },
-    'pexle4lo': {
+    'lqz3gfz1': {
       'en': 'Send Link',
       'tl': '',
     },
-    'oqvzuxku': {
+    'wg36svrb': {
       'en': 'Home',
       'tl': '',
     },
   },
   // CategoryList
   {
-    'xgg3i1vr': {
-      'en': 'Search for your groceries...',
-      'tl': '',
-    },
-    '29pzy2ey': {
+    'hkit4ep7': {
       'en': 'Snacks',
       'tl': '',
     },
-    'if718tx1': {
-      'en': 'Categories',
-      'tl': '',
-    },
-    'xyqvavy4': {
+    'ontfjhn9': {
       'en': 'Limited Edition',
       'tl': '',
     },
-    'xrwel27c': {
+    'luqytlm3': {
       'en': 'Outerwear',
       'tl': '',
     },
-    'mddlyib6': {
+    '0h1tytoy': {
       'en': 'Pants',
       'tl': '',
     },
-    '3q8ir85g': {
+    'zefk8doo': {
       'en': 'Shorts Sporty',
       'tl': '',
     },
-    '7bek1n1a': {
+    'arr6v7lw': {
       'en': 'Shorts Casual',
       'tl': '',
     },
-    'qxq0jmc2': {
+    'wzg8c6t5': {
       'en': 'Casual Tees',
       'tl': '',
     },
-    'icnn20lf': {
+    'urvauez2': {
       'en': 'Shoes',
       'tl': '',
     },
-    'wk0r6yot': {
+    'u0ql0o21': {
       'en': 'Dairy',
       'tl': '',
     },
-    'xua1rx42': {
-      'en': 'Categories',
-      'tl': '',
-    },
-    '4x9ek4yu': {
+    'dofyava9': {
       'en': 'Limited Edition',
       'tl': '',
     },
-    'y2lxe8rl': {
+    '60ewid9k': {
       'en': 'Outerwear',
       'tl': '',
     },
-    'lwdc9gzk': {
+    'pln7jnwx': {
       'en': 'Pants',
       'tl': '',
     },
-    'w500y8kw': {
+    'gwczwxld': {
       'en': 'Shorts Sporty',
       'tl': '',
     },
-    'pon482yh': {
+    'h0sk76o3': {
       'en': 'Shorts Casual',
       'tl': '',
     },
-    '67ffy46k': {
+    'mo4t138g': {
       'en': 'Casual Tees',
       'tl': '',
     },
-    'usqmn0aa': {
+    'ojw0zxd5': {
       'en': 'Shoes',
       'tl': '',
     },
-    'g00hi03h': {
+    '8j6umquk': {
       'en': 'Personal Care',
       'tl': '',
     },
-    'z3py46bw': {
-      'en': 'Categories',
-      'tl': '',
-    },
-    '8azp7euz': {
+    'jkd5m1zv': {
       'en': 'Outerwear',
       'tl': '',
     },
-    'qzvf1byc': {
+    'pxx8fjye': {
       'en': 'Pants',
       'tl': '',
     },
-    '84ubctw9': {
+    'llj314ld': {
       'en': 'Shorts Sporty',
       'tl': '',
     },
-    'kxuvyg6v': {
+    'uj75nme6': {
       'en': 'Shorts Casual',
       'tl': '',
     },
-    'u28uqyue': {
+    'ghdhzkjx': {
       'en': 'Casual Tees',
       'tl': '',
     },
-    'igz1evtn': {
+    'aag4er8i': {
       'en': 'Limited Edition',
       'tl': '',
     },
-    'ucss1e4f': {
+    'kx3a1cbh': {
       'en': 'Shoes',
       'tl': '',
     },
-    '129hmis3': {
+    'ufpvl6yj': {
       'en': 'Categories',
       'tl': '',
     },
-    'bg7fbx9r': {
-      'en': 'Shop',
+    '1ous5hvn': {
+      'en': 'Category',
       'tl': '',
     },
   },

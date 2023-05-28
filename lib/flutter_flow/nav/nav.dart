@@ -148,7 +148,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'CategoryList',
           path: '/categoryList',
-          builder: (context, params) => CategoryListWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'CategoryList')
+              : CategoryListWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

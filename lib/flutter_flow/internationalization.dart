@@ -290,12 +290,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Back to Products',
       'tl': '',
     },
-    'wj1zx3ex': {
-      'en': 'Add to Cart',
-      'tl': '',
-    },
-    'f2bjqevp': {
-      'en': 'Order Now',
+    'ifrszge6': {
+      'en': 'Buy Now',
       'tl': '',
     },
   },
@@ -387,11 +383,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // ProductList
   {
     'b87yklex': {
-      'en': 'Add to cart',
-      'tl': '',
-    },
-    'azihu1mi': {
-      'en': 'All Products',
+      'en': 'Order Now',
       'tl': '',
     },
     'dokk0cub': {
